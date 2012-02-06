@@ -31,7 +31,7 @@ require "includes/html/header.php";
 			<!-- Summer of skills -->
 			<strong>Summary:</strong><br />
 				<span class="indent">
-					&bull; Advanced knowledge and experience using: (X)HTML 4/5, PHP, Python, MySQL, JavaScript (and Ajax), and CSS.<br />
+					&bull; Knowledge and experience using: (X)HTML 4/5, PHP, Scala, Python, MySQL, JavaScript (and Ajax), and CSS.<br />
 					&bull; Great knowledge of all major operating systems. (Linux, Mac OS, Windows)<br />
 					&bull; A great ability to work as a team and work with others.<br />
 					&bull; Exceptional ability to understand, quantify, and expand ideas and projects.<br />
@@ -47,6 +47,13 @@ require "includes/html/header.php";
 			<!-- Employment -->
 			<strong>Employment:</strong><br />
 				<span class="indent">
+          &bull; (2011 - Present) Intern at 
+            <a href="http://t8webware.com" title="T8 Webware">T8 Webware</a>.<br />
+              <span class="indent">
+                Using Scala to create applications that re-invent how people interact with their money.
+              </span>
+            <br />
+
 					&bull; (2011 - Present) Webmaster for 
 						<a href="http://www.uni.edu/nisg" title="Northern Iowa Student Government">Northern Iowa Student Government</a>.<br />
 						
