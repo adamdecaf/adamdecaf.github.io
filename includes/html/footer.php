@@ -4,22 +4,17 @@
 		<p>
 			You can follow me on 
 			[
-				<a href="https://twitter.com/adamdecaf/">Twitter</a>
-			], 
-			
-				or just search for "adamdecaf" on any social site.
+        <a href="https://facebook.com/adamdecaf">Facebook</a> | 
+        <a href="http://github.com/adamdecaf">Github</a> | 
+				<a href="https://twitter.com/adamdecaf">Twitter</a>
+			]
 				
-			<br /><br />
-			
-			All content is released into the public domain.
-			
 			<br /><br />
 			
 			This page was last modified on 
 				<?php
 					// Get the last modified date.
 					$file = filemtime("index.php");
-					
 					echo @date("F j, Y", $file) . ', ';
 				?>
 			and is about 

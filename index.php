@@ -33,19 +33,16 @@ require "includes/html/header.php";
 	<article>
 		<h2>Hello!</h2>
 		<p>
-			I am <em style="text-decoration:underline;">Adam Shannon</em>: web developer and college student.  
+			I am <em style="text-decoration:underline;">Adam Shannon</em>: developer and college student.  
 			
 			<br /><br />
-			
-			I'm currently working on:
-			[ 
-				<a href="http://imgmi.net/" title="Upload any image, free of charge and ads.">IMGMI.net</a> |
-				<a href="http://lystness.com/" title="Lystness - A new project of mine.">Lystness</a>
-			] along with 
-			[
-				<a href="http://unifreethought.com" title="UNI Freethought Webmaster">UNI Freethought</a> | 
-				<a href="http://www.uni.edu/nisg" title="UNI Northern Iowa Student Government Webmaster">UNI NISG</a>
-			].
+		
+      I'm currently working at 
+        <a href="http://t8webware.com">T8 Webware</a> 
+      and for
+				<a href="http://www.uni.edu/nisg" title="UNI Northern Iowa Student Government Webmaster">UNI's Student Government</a>.
+      I am also manage 
+				<a href="http://unifreethought.com" title="UNI Freethought Webmaster">UNI Freethought</a>.
 			
 			<br /><br />
 			
@@ -57,21 +54,14 @@ require "includes/html/header.php";
 	<article>
 		<h2>About Me</h2>
 		<p>
-			I love to: work with the new <a href="http://whatwg.org/html5">HTML 5 specification</a>, do mathematics, and discuss any 
-			topic in great detail.
-			
-			<br /><br />
-			
-			My company, <a href="http://decafproductions.com/">Decaf Productions</a>, works strongly to create software for you.
+			I love to: work with the new <a href="http://whatwg.org/html5">HTML 5 specification</a>, Scala, discuss mathematics,
+      and pretty much any topic in detail.
 			
 			<br /><br />
 			
 			Currently I am attending <a href="http://www.uni.edu/" title="The University of Northern Iowa">UNI</a>,
 			and I'm studying Computer Science and Mathematics.
 			
-			<br /><br />
-			
-			Aside from my web development I am an active member in: <a href="http://unifreethought.com" title="UNI Freethinkers and Inquirers">UNIFI</a>, UNI Proud, <abbr title="UNI Young Americans for Liberty">UNI-YAL</abbr>, and <a href="http://oneiowa.org/">One Iowa</a>.
 		</p>
 	</article>
 	
