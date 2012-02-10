@@ -73,7 +73,7 @@ require "includes/html/header.php";
 					<br />
 					
 					&bull; (2009 - 2011) Consultant for 
-						<a href="http://radiantwebdesigniowa.com" title="Radiant Web Desing">Radiant Web Desing</a>.<br />
+						<a href="http://radiantwebdesigniowa.com" title="Radiant Web Design">Radiant Web Design</a>.<br />
 						
 							<span class="indent">
 								Client and server side programming.<br />
