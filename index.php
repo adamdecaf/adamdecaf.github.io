@@ -41,9 +41,6 @@ require "includes/html/header.php";
         <a href="http://t8webware.com">T8 Webware</a> 
       and for
 				<a href="http://www.uni.edu/nisg" title="UNI Northern Iowa Student Government Webmaster">UNI's Student Government</a>.
-      I am also manage 
-				<a href="http://unifreethought.com" title="UNI Freethought Webmaster">UNI Freethought</a>.
-			
 			<br /><br />
 			
 			I believe very strongly that freedom, science, and reason are the best tools that we have. Other ideologies come and go
