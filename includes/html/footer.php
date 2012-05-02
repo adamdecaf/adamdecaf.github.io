@@ -40,14 +40,6 @@ window.onload = function () {
 
 		// Set the interval
 		window.setInterval(function () {
-
-			// Increase the count.
-			// 1) We are subtracing a negative amount so that we add a
-			//    numeric value and not add to the string (.innerHTML).
-			// 2) We then change the proposed amount into a string, this
-			//    this will allow us to only show a specified amount of
-			//    numbers.
-			// Note: The "+ (Math.random() / 1000)" is just for fun, it's NOT accurate!
 			var tmp = parseFloat(counter.innerHTML) + 1.00001 + (Math.random() / 200);
 			var _m = _s = '';
 
