@@ -5,7 +5,7 @@
  * 08/15/2009
  * Adam Shannon
  */
- 
+
 // Start the counter.
 $start_time = microtime();
 
@@ -33,42 +33,42 @@ require "includes/html/header.php";
 	<article>
 		<h2>Hello!</h2>
 		<p>
-			I am <em style="text-decoration:underline;">Adam Shannon</em>: developer and college student.  
-			
+			I am <em style="text-decoration:underline;">Adam Shannon</em>: developer and college student.
+
 			<br /><br />
-		
-      I'm currently working at 
-        <a href="http://t8webware.com">T8 Webware</a> 
+
+      I'm currently working at
+        <a href="http://t8webware.com">T8 Webware</a>
       and for
 				<a href="http://www.uni.edu/nisg" title="UNI Northern Iowa Student Government Webmaster">UNI's Student Government</a>.
 			<br /><br />
-			
+
 			I believe very strongly that freedom, science, and reason are the best tools that we have. Other ideologies come and go
 			but rational and critical thougth have been most truthful.
 		</p>
 	</article>
-	
+
 	<article>
 		<h2>About Me</h2>
 		<p>
 			I love to: work with the new <a href="http://whatwg.org/html5">HTML 5 specification</a>, Scala, discuss mathematics,
       and pretty much any topic in detail.
-			
+
 			<br /><br />
-			
+
 			Currently I am attending <a href="http://www.uni.edu/" title="The University of Northern Iowa">UNI</a>,
 			and I'm studying Computer Science and Mathematics.
-			
+
 		</p>
 	</article>
-	
+
 	<article>
 		<h2>Contact Me</h2>
 		<p>
 			If you are looking to contact me feel free to email me with the details in the upper right of this page.
-			
+
 			<br /><br />
-			
+
 			Here is my <a href="resume.php" title="My personal R&#233;sum&#233;">r&#233;sum&#233;</a>.
 		</p>
 	</article>
