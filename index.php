@@ -33,18 +33,18 @@ require "includes/html/header.php";
   <article>
     <h2>Hello!</h2>
     <p>
-     I am <em style="text-decoration:underline;">Adam Shannon</em>: developer and college student.
+     Greetings! I'm a developer and college student!
      <br /><br />
-     I'm currently working at <a href="http://t8webware.com">T8 Webware</a> and for <a href="http://www.uni.edu/nisg" title="UNI Northern Iowa Student Government Webmaster">UNI's Student Government</a>. <br /><br /> I believe very strongly that freedom, science, and reason are the best tools that we have. Other ideologies come and go but rational and critical thougth have been most truthful.
+     I'm currently working at <a href="http://t8webware.com">T8 Webware</a> and for <a href="http://www.uni.edu/nisg" title="UNI Northern Iowa Student Government Webmaster">UNI's Student Government</a>. <br /><br /> I believe very strongly that freedom, science, and reason are the best tools that we have.
     </p>
   </article>
 
   <article>
     <h2>About Me</h2>
       <p>
-        I've been working with Scala recently and it's a language that allows you to express and do what you want to do in very elegant ways.
+        I've been learning <a href="http://stackoverflow.com/questions/tagged/scala?sort=votes&pagesize=15">Scala</a> recently and it's a language that allows you to express and do what you want to do in very elegant and simple ways.
         <br /><br />
-        Currently I am attending <a href="http://www.uni.edu/" title="The University of Northern Iowa">UNI</a>, and I'm studying Computer Science and Mathematics.
+        Currently I am attending the <a href="http://www.uni.edu/" title="The University of Northern Iowa">University of Northern Iowa</a>, and I'm studying Computer Science and Mathematics.
       </p>
   </article>
 

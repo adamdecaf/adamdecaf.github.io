@@ -50,7 +50,7 @@ require "includes/html/header.php";
           &bull; (2011 - Present) Intern at
             <a href="http://t8webware.com" title="T8 Webware">T8 Webware</a>.<br />
               <span class="indent">
-                Using Scala to create applications that re-invent how people interact with their money.
+                Using Scala and various database layers to create applications that re-invent how people interact with their money.
               </span>
             <br />
 
@@ -63,7 +63,7 @@ require "includes/html/header.php";
 							</span>
 					<br />
 
-					&bull; (2011 - Present) Webmaster for
+					&bull; (2011 - 2012) Webmaster for
 						<a href="http://unifreethought.com" title="UNI Freethinkers and Inquirers">UNI Freethinkers and Inquirers</a>.<br />
 
 							<span class="indent">
@@ -90,7 +90,7 @@ require "includes/html/header.php";
 							</span>
 					<br />
 
-					&bull; (2008 - Present) Founder of
+					&bull; (2008 - 2012) Founder of
 						<a href="http://decafproductions.com" title="Decaf Productions">Decaf Productions</a>.<br />
 
 							<span class="indent">
