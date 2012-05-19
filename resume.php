@@ -31,7 +31,7 @@ require "includes/html/header.php";
 			<!-- Summer of skills -->
 			<strong>Summary:</strong><br />
 				<span class="indent">
-					&bull; Knowledge and experience using: (X)HTML 4/5, PHP, Scala, Python, MySQL, JavaScript (and Ajax), and CSS.<br />
+					&bull; Knowledge and experience using: (X)HTML 4/5, PHP, Scala, Python, MySQL, JavaScript, XML (and all of its variants) and CSS.<br />
 					&bull; Great knowledge of all major operating systems. (Linux, Mac OS, Windows)<br />
 					&bull; A great ability to work as a team and work with others.<br />
 					&bull; Exceptional ability to understand, quantify, and expand ideas and projects.<br />

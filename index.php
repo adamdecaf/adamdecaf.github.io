@@ -51,7 +51,7 @@ require "includes/html/header.php";
   <article>
     <h2>Contact Me</h2>
     <p>
-      If you are looking to contact me feel free to email me with the details in the upper right of this page.
+      If you are looking to contact me feel free to email me with the details in the upper right of this page. However, I would love to work with you over <a href="https://github.com/adamdecaf">Github</a>.
       <br /><br />
       Here is my <a href="resume.php" title="My personal R&#233;sum&#233;">r&#233;sum&#233;</a>.
     </p>
