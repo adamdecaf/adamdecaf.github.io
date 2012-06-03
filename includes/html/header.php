@@ -47,7 +47,7 @@
 	<nav>
 
 		<aside>
-			Email: <img src="images/adam_personal.png" alt="adam[AT]ashannon.us" title="My personal email" />
+			Email: <img src="http://cdn.ashannon.us/images/adam_personal.png" alt="adam[AT]ashannon.us" title="My personal email" />
 		</aside>
 
 		<h1>
