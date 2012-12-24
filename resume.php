@@ -47,6 +47,13 @@
     <!-- Employment -->
     <strong>Employment:</strong><br />
     <span class="indent">
+      &bull; (2012 - Present) Webmaster at
+      <a href="http://uni.edu/involvement" title="UNI Student Involvement Center">UNI Student Involvement Center</a>.<br />
+      <span class="indent">
+        Helping them create a new website for student organizations and other groups.
+      </span>
+      <br />
+
       &bull; (2011 - Present) Intern at
       <a href="http://banno.com" title="Banno">Banno</a>.<br />
       <span class="indent">
