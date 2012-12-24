@@ -35,7 +35,7 @@ require "includes/html/header.php";
     <p>
      Greetings! I'm a developer and college student!
      <br /><br />
-     I'm currently working at <a href="http://banno.com">Banno</a> and for <a href="http://www.uni.edu/nisg" title="UNI Northern Iowa Student Government Webmaster">UNI's Student Government</a>. <br /><br /> I believe very strongly that freedom, science, and reason are the best tools that we have.
+     I'm currently working at <a href="http://banno.com">Banno</a>, <a href="http://uni.edu/involvement">UNI Student Involvement Center</a>, and for <a href="http://www.uni.edu/nisg" title="UNI Northern Iowa Student Government Webmaster">UNI's Student Government</a>. <br /><br /> I believe very strongly that freedom, science, and reason are the best tools that we have.
     </p>
   </article>
 
