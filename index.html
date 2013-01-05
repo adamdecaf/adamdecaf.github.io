@@ -1,0 +1,174 @@
+
+<!--
+   * Adam Shannon's Personal Site
+   * Public Domain
+   * 08/15/2009
+   * Adam Shannon
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Adam Shannon - Open Web Supporter</title>
+
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<link rel="shortcut icon" href="http://cdn.ashannon.us/images/favcon.jpg" />
+
+	<meta charset="UTF-8" />
+	<meta name='verify-v1' content='RJ65OaEN3MUHe6d/2QIR+pvTXj6YICqyxKx31tfc46s=' />
+</head>
+
+<body>
+
+	<!--[if lt IE 7]>
+		<div style='border: 1px solid #F7941D; background: #FEEFDA; text-align: center; clear: both; height: 75px; position: relative;'>
+			<div style='position: absolute; right: 3px; top: 3px; font-family: courier new; font-weight: bold;'>
+				<a href='#' onclick='javascript:this.parentNode.parentNode.style.display="none"; return false;'>
+					<img src='images/ie/cornerx.jpg' style='border: none;' alt='Close this notice'/>
+				</a>
+			</div>
+			<div style='width: 640px; margin: 0 auto; text-align: left; padding: 0; overflow: hidden; color: black;'>
+				<div style='width: 75px; float: left;'>
+					<img src='images/ie/warning.jpg' alt='Warning!'/>
+				</div>
+				<div style='width: 275px; float: left; font-family: Arial, sans-serif;'>
+					<div style='font-size: 14px; font-weight: bold; margin-top: 12px;'>
+						You are using an outdated browser
+					</div>
+					<div style='font-size: 12px; margin-top: 6px; line-height: 12px;'>
+						For a better experience using this site, please upgrade to a modern web browser.
+					</div>
+				</div>
+				<div style='width: 75px; float: left;'>
+					<a href='http://www.firefox.com' target='_blank'>
+						<img src='images/ie/firefox.jpg' style='border: none;' alt='Get Firefox 3.5'/>
+					</a>
+				</div>
+				<div style='width: 75px; float: left;'>
+					<a href='http://www.browserforthebetter.com/download.html' target='_blank'>
+						<img src='images/ie/ie8.jpg' style='border: none;' alt='Get Internet Explorer 8'/>
+					</a>
+				</div>
+				<div style='width: 73px; float: left;'>
+					<a href='http://www.apple.com/safari/download/' target='_blank'>
+						<img src='images/ie/safari.jpg' style='border: none;' alt='Get Safari 4'/>
+					</a>
+				</div>
+				<div style='float: left;'>
+					<a href='http://www.google.com/chrome' target='_blank'>
+						<img src='images/ie/chrome.jpg' style='border: none;' alt='Get Google Chrome'/>
+					</a>
+				</div>
+			</div>
+		</div>
+	<![endif]-->
+
+	<nav>
+
+		<aside>
+			Email: <img src="http://ashannon.us/images/adam_personal.png" alt="adam[AT]ashannon.us" title="My personal email" />
+		</aside>
+
+		<h1>
+			<a href="index.php" title="Go To The Home Page">Adam Shannon</a>
+			<span>
+				 -- &quot;Open web standards or bust!&quot;			</span>
+		</h1>
+
+	</nav>
+
+  <article>
+    <h2>Hello!</h2>
+    <p>
+     Greetings! I'm a developer and college student!
+     <br /><br />
+     I'm currently working at <a href="http://banno.com">Banno</a>, <a href="http://uni.edu/involvement">UNI Student Involvement Center</a>, and for <a href="http://www.uni.edu/nisg" title="UNI Northern Iowa Student Government Webmaster">UNI's Student Government</a>. <br /><br /> I believe very strongly that freedom, science, and reason are the best tools that we have.
+    </p>
+  </article>
+
+  <article>
+    <h2>About Me</h2>
+      <p>
+        I've been learning <a href="http://stackoverflow.com/questions/tagged/scala?sort=votes&pagesize=15">Scala</a> recently and it's a language that allows you to express and do what you want to do in very elegant and simple ways.
+        <br /><br />
+        Currently I am attending the <a href="http://www.uni.edu/" title="The University of Northern Iowa">University of Northern Iowa</a>, and I'm studying Computer Science and Mathematics.
+      </p>
+  </article>
+
+  <article>
+    <h2>Contact Me</h2>
+    <p>
+      If you are looking to contact me feel free to email me with the details in the upper right of this page. However, I would love to work with you over <a href="https://github.com/adamdecaf">Github</a>.
+      <br /><br />
+      Here is my <a href="resume.html" title="My personal R&#233;sum&#233;">r&#233;sum&#233;</a>.
+    </p>
+  </article>
+
+
+	<article>
+		<h2>Meta</h2>
+		<p>
+			You can follow me on
+			[
+        <a href="https://facebook.com/adamdecaf">Facebook</a> |
+        <a href="http://github.com/adamdecaf">Github</a> |
+				<a href="https://twitter.com/adamdecaf">Twitter</a>
+			]
+
+			<br /><br />
+
+			This page was last modified on
+				December 24, 2012, 			and is about
+				<span id="load-time">0.0003</span> old.
+				<span id="counter" style="display:none;">0</span>
+		</p>
+	</article>
+
+<!-- Custom JS -->
+<script>
+window.onload = function () {
+	// Grab the load-time element
+	var elm = document.getElementById('load-time'),
+		counter = document.getElementById('counter');
+
+		// Set the interval
+		window.setInterval(function () {
+			var tmp = parseFloat(counter.innerHTML) + 1.00001 + (Math.random() / 200);
+			var _m = _s = '';
+
+				// Now we can check for time details.
+				if (tmp > 60) {
+
+					var seconds = parseInt(tmp % 60, 10, 10).toString(),
+						minutes = parseInt(tmp / 60, 10, 10).toString();
+
+						// Check to see if we should make them plural.
+						(parseInt(seconds) != 1) ? _s = 's' : _s = '';
+						(parseInt(minutes) != 1) ? _m = 's' : _m = '';
+
+					elm.innerHTML = minutes + ' minute' + _m + ' and ' + seconds + ' second' + _s;
+					counter.innerHTML = tmp;
+
+				} else {
+
+					elm.innerHTML = tmp.toString().substr(0, 6) + ' seconds';
+					counter.innerHTML = tmp;
+				}
+
+
+		}, 1000, elm, counter);
+};
+</script>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-11236244-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+
