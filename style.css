@@ -57,7 +57,7 @@ section article.camping-block {
     margin-bottom: 25px;
     background-color: #bdcadb;
     border-radius: 5px;
-    padding: 0px 0px 5px 10px;
+    padding: 0px 10px 5px 10px;
 }
 
 section article h3 {
@@ -72,7 +72,7 @@ section article p {
 table.camping {
     border: 1px solid black;
     padding: 3px;
-    width: 100%;
+    width: 98%;
 }
 
 table tr.table-header {
