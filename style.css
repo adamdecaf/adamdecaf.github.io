@@ -68,5 +68,6 @@ table.camping {
 }
 
 table tr.table-header {
-    border-bottom: 1px solid black;
+    font-wight: bold;
+    text-align: center;
 }
