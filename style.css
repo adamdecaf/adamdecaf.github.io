@@ -53,6 +53,7 @@ section article {
 }
 
 section article.camping-block {
+    border-bottom: 0px;
     margin-bottom: 25px;
     background-color: #bdcadb;
     border-radius: 5px;
