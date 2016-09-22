@@ -52,6 +52,13 @@ section article {
     margin-bottom: 25px;
 }
 
+section article.camping-block {
+    margin-bottom: 25px;
+    background-color: #bdcadb;
+    border-radius: 5px;
+    padding: 0px 0px 5px 10px;
+}
+
 section article h3 {
     font-family: helvetica;
     font-weight: bold;
