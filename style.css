@@ -61,7 +61,7 @@ section article p {
     font-family: Arial;
 }
 
-table .camping {
+table.camping {
     border: 1px solid black;
     width: 80%;
 }
