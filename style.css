@@ -8,6 +8,7 @@ a:active { color: #000000; }
 
 body {
     background-color: #FFFFFA;
+    font-family: helvetica;
 }
 
 ul {
@@ -38,10 +39,6 @@ nav {
     border-bottom: 1px solid #000;
 }
 
-nav h1 {
-    font-family: helvetica;
-}
-
 section {
     margin-left: 10%;
     width: 80%;
@@ -61,12 +58,11 @@ section article.camping-block {
 }
 
 section article h3 {
-    font-family: helvetica;
     font-weight: bold;
 }
 
-section article p {
-    font-family: Arial;
+section article label {
+    font-weight: bold;
 }
 
 table.camping {
