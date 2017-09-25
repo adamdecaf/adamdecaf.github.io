@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <title>ashannon.us - where</title>
+  </head>
+  <body  style="width:100%;">
+    <table>
+      <tr>
+        <td>
+          <label for="Weather-links">Weather Links</label>
+          <ul id="weather-links">
+            <li><a href="http://www.weather.gov">weather.gov</a></li>
+            <li><a href="http://pcso77.net/">psco77.net</a></li>
+          </ul>
+        </td>
+        <td>
+          <span>Local Searches</span>
+          <ul id="lsrch">
+            <li id="donuts"></li>
+            <li id="groceries"></li>
+            <li id="planet-fitness"></li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+
+    <br />
+
+    <div style="text-align:center">
+      <a href="https://radar.weather.gov/Conus/Loop/NatLoop.gif" target="_blank">
+        <img src="https://radar.weather.gov/Conus/Loop/NatLoop_Small.gif" />
+      </a>
+    </div>
+
+    <div style="text-align:center" id="gmaps" style="border:1px solid black; position:absolute;width:600px;height:450px;">
+      <span></span>
+    </div>
+
+    <div style="text-align:center">
+      <iframe src="http://wttr.in/" style="height400px; width:940px;"></iframe>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
