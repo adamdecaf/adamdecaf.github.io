@@ -46,7 +46,7 @@ function getNFSShortDateYesterday() {
   var day = dt.getDate() - 1
   return year.toString() + day.toString();
 }
-console.log(getNFSShortDateYesterday());
+// console.log(getNFSShortDateYesterday());
 
 // From https://stackoverflow.com/questions/23593052/format-javascript-date-to-yyyy-mm-dd
 function getYYYYMMDD() {
@@ -60,17 +60,16 @@ function getYYYYMMDD() {
 
   return [year, month, day].join('-');
 }
-console.log(getYYYYMMDD());
+// console.log(getYYYYMMDD());
 
 // Set NFS image links
 function nfsSet(id, url) {
   var elm = document.querySelector("#" + id);
   elm.src = url;
 }
-nfsSet("nfs-fd", "https://fsapps.nwcg.gov/afm/data/last12/last12_" + getNFSShortDateYesterday() + "1_1200_fd_pts.png");
 nfsSet("nfs-rf", "https://fsapps.nwcg.gov/afm/data/last12/last12_" + getNFSShortDateYesterday() + "1_1200_fw_pts.png");
 nfsSet("nfs-ld", "https://fsapps.nwcg.gov/afm/data/last12/last12_" + getNFSShortDateYesterday() + "1_1200_ls_pts.png");
 
 // Large Fire Incidents
 nfsSet("nfs-lf-fire-img", "https://fsapps.nwcg.gov/data/lg_fire/lg_fire_nifc_" + getYYYYMMDD() + ".png");
-document.querySelector("#nfs-lg-fire-a").href = "https://fsapps.nwcg.gov/data/lg_fire/lg_fire_nifc_" + getYYYYMMDD() + "_browse.png";
+document.querySelector("#nfs-lf-fire-a").href = "https://fsapps.nwcg.gov/data/lg_fire/lg_fire_nifc_" + getYYYYMMDD() + "_browse.png";
