@@ -3,6 +3,9 @@
   <head>
     <title>ashannon.us - where</title>
     <meta name=viewport content="width=device-width, initial-scale=1">
+    <style>
+      .legendbox { display: inline-block; height: 10px; width: 20px; border: 1px solid #000; }
+    </style>
   </head>
   <body>
     <table cellpadding="10">
@@ -18,6 +21,7 @@
           <span>Links</span>
           <ul>
             <li><a href="maps.html" style="color:#0000ee;">Local Google Maps</a></li>
+            <li><a href="http://hisz.rsoe.hu/alertmap/index2.php">Worldwide Alert Map</a> (<a href="http://hisz.rsoe.hu/alertmap/index2.php?area=usa">USA</a>)</li>
           </ul>
         </td>
       </tr>
@@ -59,6 +63,27 @@
       <a id="nfs-lf-fire-a" target="_blank">
         <img id="nfs-lf-fire-img" />
       </a>
+    </div>
+
+    <div style="text-align: center;">
+      <strong>Today's Flood Conditions -- USGS WaterWatch</strong><br />
+      <a href="https://waterwatch.usgs.gov/new/index.php?id=ww_flood" target="_blank">
+        <img src="https://waterwatch.usgs.gov/images/flood/us/floodb.gif" />
+      </a>
+      <br />
+      <div>
+	<span class="legendbox" style="background-color:#231F20"></span> River Above Flood Stage |
+	<span class="legendbox" style="background-color:#0000FF"></span> 99th Percentile |
+	<span class="legendbox" style="background-color:#37A49A"></span> 95-98 Percentile
+      </div>
+
+      <!--
+      <ul style="list-style-type:none; text-align: left;">
+	<li style="border: 1px solid black;"><div class="legendbox" style="background-color:#231F20"></div> River Above Flood Stage</li>
+	<li><div class="legendbox" style="background-color:#0000FF"></div> 99th Percentile</li>
+	<li><div class="legendbox" style="background-color:#37A49A"></div> 95-98 Percentile</li>
+      </ul>
+      -->
     </div>
 
     <script src="index-script.js"></script>
