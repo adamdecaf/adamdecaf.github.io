@@ -29,7 +29,7 @@
           <span>Links</span>
           <ul>
             <li><a href="https://apod.nasa.gov/apod/astropix.html" target="_blank">Astronomy Picture of the Day</a></li>
-            <li><a href="http://glacierwater.com/refill-station-finder/" target="_blank">Find Glacier Water</a></li>
+            <li><a href="javascript:void(0)" onclick="water();">Find Glacier Water</a></li>
           </ul>
         </td>
       </tr>
@@ -107,5 +107,11 @@
     </div>
 
     <script src="index-script.js"></script>
+    <script>
+      function water() {
+        var where = prompt("Where to look for Glacier");
+        window.location = "http://locator.glacierwater.com/locator/viewer/map.php?lat=&lng=&accuracy=&search=" + encodeURIComponent(where) + "&value=5"
+      }
+    </script>
   </body>
 </html>
