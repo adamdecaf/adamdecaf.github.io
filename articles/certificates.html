@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Adam Shannon - Articles</title>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <meta charset="utf-8" />
+  </head>
+  <body>
+
+    <nav>
+      <div class="right bold black">
+        <a href="http://github.com/adamdecaf">Github</a> |
+        <a href="https://twitter.com/adamdecaf">Twitter</a>
+      </div>
+
+      <h1><a href="../">Adam Shannon</a> - <a href="/articles">/articles</a></h1>
+    </nav>
+
+    <section>
+      <article style="overflow:auto;">
+
+        <h2 style="text-align: center;">On x509 Certificates</h2>
+
+        <p>
+          X.509 Certificates have enabled the encrypted web we almost take for granted today. They have been a core component in web browsers establishing enough trust between arbitrary computers, possibly different countries and legal boundries, for us humans to facilitate and exponentially expand our economy to levels practically unthinkable twenty to thirty years ago. This trust has become an implicit requirement thrown into every device that connects to another computer and over the recent years we have seen that trust be stretched, violated and strengthed.
+        </p>
+
+        // TODO(adam): somewhere mention MITM attacks, Trustwave
+        https://www.trustwave.com/Resources/SpiderLabs-Blog/Clarifying-The-Trustwave-CA-Policy-Update/
+        https://bugzilla.mozilla.org/show_bug.cgi?id=724929
+
+        // Leaked private keys
+        // Cyberoam, https://blog.torproject.org/blog/security-vulnerability-found-cyberoam-dpi-devices-cve-2012-3372
+        // Trustico
+        // Dell, http://www.dell.com/support/article/us/en/19/SLN300321
+        // etc..
+
+        <p>
+          Certificates are powerful, but their power comes with responsability which, while checked, is hard for even a "power user" (someone with intermediate or above knowledge of a device) to do much about. They're typically left to manual and inconvenient solutions to audit or reduce their trust willingness. I'm building a tool, <a href="https://github.com/adamdecaf/cert-manage">cert-manage</a>, which attempts to give power users much easier access into how much trust they're extending onto the internet.
+        </p>
+
+        <p>
+          Companies are the primary brokers of trust on the internet. They are the parties which generate and sell certificates and some act with fantasic responsibility while others have been careless. There are a few volunteer organizations created to publically audit and discuss the latest findings around certificates. The <a href="https://groups.google.com/forum/#!forum/mozilla.dev.security.policy">mozilla.dev.security.policy group</a> and <a href="https://cabforum.org">CA/Browser Forum</a> are the primary orchestrators.
+        </p>
+
+        <hr />
+
+        <p>
+          In order to discuss much more about certificates requires explaining them a bit. When your browser wishes to load a webpage from a webserver over a secure connection (e.g. HTTPS websites) it must do so by having the server present its "certificate chain", e.g. a list of certificates, that your browser processes to verify trust. Your browser has a set of "root certificates" preloaded into it and will use them to find an unbroken link between a root certificate and the certificates presented by the server. This exact process is massively complex and not a subject of this article, but you can read more on the <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS/An_overview_of_NSS_Internals">Mozilla NSS Internals page</a>.
+          // TODO(adam): better link??
+          // TOOD(adam): image?
+        </p>
+
+        <p>
+          These root certificates are generated and managed by Certificate Authorities (CA's) and such are under various policies from browser vendors (e.g. <a href="https://www.apple.com/certificateauthority/ca_program.html">Apple</a>, <a href="https://www.chromium.org/Home/chromium-security/root-ca-policy">Google</a>, <a href="https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/">Mozilla</a> (Firefox), and <a href="https://technet.microsoft.com/en-us/library/cc751157.aspx">Microsoft</a>) who choose to include (or remove) them from their browsers. A CA having it's certificates included (or not) in the browsers essentially determines if the CA is able to sell its certificates. With the power browsers have they can require external audits of Certificate Authorities or request detailed explanations if problems arise.
+        </p>
+
+        <p>
+          Browser leverage has been used to revoke trust in, at the time, one of the largest CA's in the business. When <a href="https://wiki.mozilla.org/CA:Symantec_Issues">Symantec had repeated</a> violations of multiple browser policies they set out a procedure of revoking the policy. Revoking this trust was done to protect consumers and the internet. A similar negligence was seen with <a href="https://wiki.mozilla.org/CA:WoSign_Issues">WoSign (now called WoTrus)</a> where repeated violations were allowed to continue ending in trust being revoked. This article is not attempting to burn the earth of certificates authorities, but instead offer a practical tool for further improvement regarding the implicit nature of consumer trust.
+        </p>
+
+        // TODO(adam): Discuss this tool vs
+        // CRL / OCSP (delayed response, fail-open vs fail-closed)
+        // CT / AKI / Key Transparency: delayed, logging/audit oriented, data source for minimal cert set
+        // DNS DANE: requires DNSSEC rollout
+
+        <p style="text-align:center;">
+          <a href="media/certs/figure1.png" target="_blank">
+            <img style="max-width: 45%; max-height:45%;" src="media/certs/figure1.png" />
+          </a>
+          <br />
+          TODO(adam): describe
+          <br />
+          FROM You Won’t Be Needing These Any More: On Removing Unused Certificates From Trust Stores !!!!
+        </p>
+
+        // Topics
+        ratio of host/domain (and their usage) compared to CA distribution
+        - can we remove certs? "You won't be needing these anymore"
+        - programatic trust? - e.g. CAge
+        <p>
+
+        </p>
+
+        <p style="text-align:center;">
+          <a href="media/certs/table1.png" target="_blank">
+            <img style="max-width: 45%; max-height:45%;" src="media/certs/table1.png" />
+          </a>
+        </p>
+
+        // Removing
+        // "Roughly 34 % of all CA certificates are never used for signing HTTPS certificates." -- From "on removing", add biblography
+
+        // CAge
+        //
+
+        <hr />
+
+        <h4>Links and Resources</h4>
+        <ul>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS/An_overview_of_NSS_Internals">An Overview of NSS Internals</li>
+
+          <li><a href="https://github.com/adamdecaf/cert-manage/blob/master/docs/papers/cage-fc13.pdf">CAge: Taming Certificate Authorities by Inferring Restricted Scopes</a></li>
+          <ul>
+            <li>By James Kasten, Eric Wustrow, and J. Alex Halderman</li>
+          </ul>
+          <li><a href="https://github.com/adamdecaf/cert-manage/blob/master/docs/papers/https-imc13.pdf">Analysis of the HTTPS Certificate Ecosystem</a></li>
+          <ul>
+            <li>By Zakir Durumeric, James Kasten, Michael Bailey, J. Alex Halderman</li>
+          </ul>
+          <li><a href="https://github.com/adamdecaf/cert-manage/blob/master/docs/papers/on-removing-unused-certs.pdf">You Won’t Be Needing These Any More: On Removing Unused Certificates From Trust Stores</a></li>
+          <ul>
+            <li>By Henning Perl, Sascha Fahl, and Matthew Smith</li>
+          </ul>
+        </ul>
+      </article>
+    </section>
+  </body>
+</html>
