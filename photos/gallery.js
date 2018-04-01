@@ -67,6 +67,12 @@
     }
   ];
 
+  var getThumbnail = function(path) {
+    var parts = path.split('.')
+    parts.pop() // drop last element (file extension)
+    return parts.join('.') + "_thumb.jpg"
+  }
+
   // Add images to html
   for (i = 0; i < albums.length; i++) {
     var album = albums[i];
@@ -96,7 +102,7 @@
 
       var inner = document.createElement("img")
       a.appendChild(inner)
-      inner.src = img.url
+      inner.src = getThumbnail(img.url)
       inner.setAttribute("itemprop", "thumbnail")
       if (img.hasOwnProperty('caption')) {
         inner.alt = img['caption']
