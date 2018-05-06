@@ -17,6 +17,16 @@
         { url: "/photos/2018/20180226_172558.jpg", caption: "California" },
         { url: "/photos/2018/20180308_164117.jpg", 'data-size': '2576x1932', caption: "St. George, UT" },
         { url: "/photos/2018/20180308_164129.jpg", portrait: true, 'data-size': '1932x2576', caption: "St. George, UT" },
+
+        { url: "/photos/2018/20180208_163950.jpg", portrait: true, caption: "Golen Gate Bridge", },
+        { url: "/photos/2018/20180208_154140.jpg", caption: "Headed into SF", },
+        { url: "/photos/2018/20180209_160126.jpg", },
+        { url: "/photos/2018/20180411_184527.jpg", portrait: true, caption: "Hike along Niagara", },
+        { url: "/photos/2018/20180411_182132.jpg", caption: "Cove on Niagara hike", },
+        { url: "/photos/2018/20180411_185907.jpg", caption: "Niagara river", },
+        { url: "/photos/2018/20180429_092853.jpg", caption: "Mt. Cadillac - Acadia National Park", },
+        { url: "/photos/2018/20180429_093616.jpg", caption: "Mt. Cadillac - Acadia National Park", },
+        { url: "/photos/2018/20180429_095419.jpg", caption: "Mt. Cadillac - Acadia National Park", },
       ],
     },
     {
