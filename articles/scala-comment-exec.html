@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Adam Shannon - Articles</title>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <meta charset="utf-8" />
+  </head>
+  <body>
+
+    <nav>
+      <div class="right bold black">
+        <a href="https://github.com/adamdecaf">Github</a> |
+        <a href="https://twitter.com/adamdecaf">Twitter</a>
+      </div>
+
+      <h1><a href="../">Adam Shannon</a> - <a href="/articles">/articles</a></h1>
+    </nav>
+
+    <section>
+      <article style="overflow:auto;">
+
+        <h2 style="text-align: center;">Scala executes code in your comments</h2>
+
+        <p>
+          Recently I came across an article about <a href="http://programming.guide/java/executing-code-in-comments.html" target="_blank">Java executing code in comments</a> by being tricked to decode unicode characters. This means you can include a <a href="https://www.fileformat.info/info/unicode/char/000a/index.htm">Line-Feed (LF)</a> or <a href="https://www.fileformat.info/info/unicode/char/000d/index.htm">Carriage-Return (CR)</a> in a comment and have the line after it be executed at runtime.
+        </p>
+
+        <p>
+          The same trick works for <a href="https://www.scala-lang.org/">Scala</a>. I tested on 2.12.6 with the following:
+          <pre>
+$ cat print.scala
+object Test {
+  def main(args: Array[String]) = {
+    // \u000a System.out.println("Hello World!");
+    // \u000d System.out.println("Hello World!");
+
+    // \u000d println("hi")
+  }
+}
+
+$ scala print.scala
+Hello World!
+Hello World!
+hi
+          </pre>
+        </p>
+
+        <p>
+          This trick seems like an arbitrary code execution bug, but with a twist in that the bug doesn't come around until <strong>runtime</strong> and would typically come about from a sloppy copy/paste job from an untrusted source. Careful code review should catch this as oddly commented out code, but as pointed out when reporting this to Lightbend you could prefix the <code>\u000a</code> with enough spaces to move the code off screen. (In non-line wrapping editors).
+        </p>
+
+        <p>
+          Running <a href="https://github.com/scalameta/scalafmt">scalafmt</a> over this example code would highlight the executed code (at the cost of <a href="https://github.com/scalameta/scalafmt/issues/1033">a bug in chopping off part of the unicode expression</a>).
+
+          <pre>
+object Test {
+  def main(args: Array[String]) = {
+    // \u000
+    System.out.println("Hello World!");
+
+    // \u000
+    println("hi")
+  }
+}
+        </pre>
+        </p>
+
+        <p>
+          I looked at the following languages to see if they exposed the same flaw, but none seem to.
+          <br /><br />
+          <strong>Python</strong>
+          <pre>$ cat print.py
+# \u000d print "hi"</pre>
+
+          <strong>Ruby</strong>
+          <pre>$ cat print.rb
+# \u000d puts "hi"</pre>
+
+          <strong>Rust</strong>
+          <pre>$ cat print.rs
+fn main() {
+  // \u000d \n println!("Hello World!");
+}</pre>
+
+          <strong>Go</strong>
+          <pre>$ cat print1.go
+package main
+
+func main() {
+  // \u000d fmt.Println("hi")
+}</pre>
+        </p>
+
+      </article>
+    </section>
+  </body>
+</html>
