@@ -7,6 +7,19 @@
     // required: caption, url
     // optional: data-size, portrait (boolean)
     {
+      parent: document.querySelector("#gallery-2019"),
+      images: [
+        { url: "/photos/2019/IMG_20190216_133843.jpg", portrait: true, 'data-size': '1104x1472', caption: "", },
+        { url: "/photos/2019/IMG_20190323_112421.jpg", portrait: true, 'data-size': '1104x1472', caption: "", },
+        { url: "/photos/2019/IMG_20190323_113056.jpg", portrait: true, 'data-size': '1104x1472', caption: "Around Lyons, Oregon", },
+        { url: "/photos/2019/IMG_20190323_115103.jpg", portrait: true, 'data-size': '1104x1472', caption: "Around Lyons, Oregon", },
+        { url: "/photos/2019/IMG_20190413_173322.jpg", caption: "", },
+        { url: "/photos/2019/IMG_20190427_203504.jpg", caption: "", },
+        { url: "/photos/2019/signal-2019-04-28-110908.jpg", portrait: true, 'data-size': '810x1080', caption: "First daily limit (5) of fish caught", },
+        { url: "/photos/2019/signal-2019-04-28-110949.jpg", portrait: true, 'data-size': '810x1080', caption: "", },
+      ],
+    },
+    {
       parent: document.querySelector("#gallery-2018"),
       images: [
         { url: "/photos/2018/20180114_134104.jpg", caption: "Joshua Tree National Park", },
@@ -47,7 +60,6 @@
         { url: "/photos/2018/shawnee/35815014_10155362387272307_6870696102950076416_o.jpg", caption: "", 'data-size': '2016x1512', },
         { url: "/photos/2018/shawnee/35819493_10155362390207307_1375158329571016704_o.jpg", caption: "", 'data-size': '2016x1512', },
         { url: "/photos/2018/shawnee/35836788_10155362390392307_3694324357401673728_o.jpg", caption: "", 'data-size': '2016x1512', },
-        { url: "/photos/2018/shawnee/35842465_10155362388032307_3797087157970010112_o.jpg", caption: "", 'data-size': '2016x1512', },
         { url: "/photos/2018/shawnee/35853450_10155362390432307_8130199849527148544_o.jpg", caption: "", 'data-size': '2016x1512', },
         { url: "/photos/2018/shawnee/35884290_10155362389962307_606314378488184832_o.jpg", caption: "", 'data-size': '2016x1512', },
         { url: "/photos/2018/shawnee/35925285_10155362399382307_1054555530778902528_o.jpg", caption: "", 'data-size': '2016x1512', },
@@ -114,22 +126,10 @@
     {
       parent: document.querySelector("#gallery-2016"),
       images: [
-        {
-          url: "/photos/2016/IMG_20161006_175555_01.jpg",
-          'data-size': '800x290',
-        },
-        {
-          url: "/photos/2016/IMG_20161006_175558_01.jpg",
-          'data-size': '480x360',
-        },
-        {
-          url: "/photos/2016/IMG_20161006_175601_01.jpg",
-          'data-size': '480x360',
-        },
-        {
-          url: "/photos/2016/IMG_20161006_175602_01.jpg",
-          'data-size': '480x360',
-        },
+        { url: "/photos/2016/IMG_20161006_175555_01.jpg", 'data-size': '800x290', },
+        { url: "/photos/2016/IMG_20161006_175558_01.jpg", 'data-size': '480x360', },
+        { url: "/photos/2016/IMG_20161006_175601_01.jpg", 'data-size': '480x360', },
+        { url: "/photos/2016/IMG_20161006_175602_01.jpg", 'data-size': '480x360', },
       ]
     }
   ];
