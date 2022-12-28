@@ -27,15 +27,18 @@
 
     <section>
       <article style="overflow:auto;">
-
         <h2 style="text-align: center;">title</h2>
 
-        <p>
-          foo
-        </p>
+        <p>foo</p>
 
         <div class="graph">
           <canvas id="intro-graph-1" height="225" width="600"></canvas>
+        </div>
+
+        <p>bar</p>
+
+        <div class="graph">
+          <canvas id="feature-comparison" height="225" width="600"></canvas>
         </div>
 
       </article>
@@ -66,8 +69,8 @@
         ctx.restore();
       }
 
-      function draw() {
-        const canvas = document.getElementById("intro-graph-1");
+      function drawGraph(id) {
+        const canvas = document.getElementById(id);
         if (canvas.getContext) {
           const ctx = canvas.getContext("2d");
 
@@ -94,7 +97,47 @@
           drawBar(ctx, 4, "Product");
           drawBar(ctx, 5, "  Docs");
           drawBar(ctx, 6, " Infra");
+
+          return ctx
         }
+        return null
+      }
+
+      function fillBar(ctx, idx, percent, fillStyle) {
+        // Draw a rectangle filling the idx'th bar
+        ctx.save();
+        ctx.fillStyle = fillStyle;
+
+        var newy = GRAPH_TOP+(GRAPH_BOTTOM-GRAPH_TOP)*(1-percent)
+        ctx.fillRect((GRAPH_LEFT+BAR_PADDING)*idx, newy, BAR_WIDTH, GRAPH_BOTTOM-newy);
+        ctx.restore();
+      }
+
+      function fillSection(ctx, idx, percent, height, fillStyle) {
+        ctx.save();
+        ctx.fillStyle = fillStyle;
+
+        var newy = GRAPH_TOP+(GRAPH_BOTTOM-GRAPH_TOP)*(1-percent)
+        ctx.fillRect((GRAPH_LEFT+BAR_PADDING)*idx, newy, BAR_WIDTH, height);
+        ctx.restore();
+      }
+
+      function draw() {
+        var introGraph = drawGraph("intro-graph-1");
+        fillBar(introGraph, 1, 0.65, "green");
+        fillBar(introGraph, 2, 0.40, "yellow");
+        fillBar(introGraph, 3, 0.25, "red");
+        fillBar(introGraph, 4, 1, "blue");
+        fillBar(introGraph, 5, 0.66, "black");
+        fillBar(introGraph, 6, 0.99, "gray");
+
+        var featureComparison = drawGraph("feature-comparison");
+        fillSection(featureComparison, 1, 0.65, 7, "green");
+        fillSection(featureComparison, 2, 0.40, 10, "yellow");
+        fillSection(featureComparison, 3, 0.25, 12, "red");
+        fillSection(featureComparison, 4, 0.90, 14, "blue");
+        fillSection(featureComparison, 5, 0.66, 15, "black");
+        fillSection(featureComparison, 6, 0.33, 20, "gray");
       }
     </script>
   </body>
