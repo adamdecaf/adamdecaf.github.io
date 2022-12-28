@@ -32,6 +32,12 @@
         <p>foo</p>
 
         <div class="graph">
+          <canvas id="team-graph" height="225" width="250"></canvas>
+        </div>
+
+        <p>foo2</p>
+
+        <div class="graph">
           <canvas id="intro-graph-1" height="225" width="600"></canvas>
         </div>
 
@@ -69,7 +75,7 @@
         ctx.restore();
       }
 
-      function drawGraph(id) {
+      function drawGraph(id, labels) {
         const canvas = document.getElementById(id);
         if (canvas.getContext) {
           const ctx = canvas.getContext("2d");
@@ -91,12 +97,9 @@
           ctx.fillText("0%", 25, GRAPH_BOTTOM);
 
           // Draw Each Bar
-          drawBar(ctx, 1, " Sales");
-          drawBar(ctx, 2, "  CS");
-          drawBar(ctx, 3, " Eng");
-          drawBar(ctx, 4, "Product");
-          drawBar(ctx, 5, "  Docs");
-          drawBar(ctx, 6, " Infra");
+          for (idx = 0; idx < labels.length; idx++) {
+            drawBar(ctx, idx+1, labels[idx]);
+          }
 
           return ctx
         }
@@ -113,12 +116,21 @@
         ctx.restore();
       }
 
-      function fillSection(ctx, idx, percent, height, fillStyle) {
+      function fillSection(ctx, idx, percent, height, fillStyle, label) {
         ctx.save();
         ctx.fillStyle = fillStyle;
 
+        var newx = (GRAPH_LEFT+BAR_PADDING)*idx;
         var newy = GRAPH_TOP+(GRAPH_BOTTOM-GRAPH_TOP)*(1-percent)
-        ctx.fillRect((GRAPH_LEFT+BAR_PADDING)*idx, newy, BAR_WIDTH, height);
+        ctx.fillRect(newx, newy, BAR_WIDTH, height);
+
+        // Draw the label
+        if (label !== undefined) {
+          ctx.font = "14px sans-serif";
+          ctx.fillStyle = "black";
+          ctx.fillText(label, newx+BAR_WIDTH+10, newy+12, BAR_WIDTH*2);
+        }
+
         ctx.restore();
       }
 
@@ -129,8 +141,20 @@
       const Docs = 5;
       const Infra = 6;
 
+      const labels = [" Sales", "  CS", " Eng", "Product", "  Docs", " Infra"];
+
       function draw() {
-        var introGraph = drawGraph("intro-graph-1");
+        var teamGraph = drawGraph("team-graph", [" Eng"]);
+        fillSection(teamGraph, Sales, 0.15, 22, "black", "DB Layer");
+        fillSection(teamGraph, Sales, 0.30, 15, "black", "API Endpoints");
+        fillSection(teamGraph, Sales, 0.40, 10, "black", "Unit Tests");
+        fillSection(teamGraph, Sales, 0.50, 10, "black", "Local Testing");
+        fillSection(teamGraph, Sales, 0.61, 11, "black", "Initial Deploy");
+        fillSection(teamGraph, Sales, 0.75, 15, "black", "Bugs");
+        fillSection(teamGraph, Sales, 0.89, 12, "black", "Improvements");
+        fillSection(teamGraph, Sales, 1.00, 5, "black", "Code Coverage");
+
+        var introGraph = drawGraph("intro-graph-1", labels);
         fillBar(introGraph, Sales, 0.65, "black");
         fillBar(introGraph, CS, 0.40, "black");
         fillBar(introGraph, Eng, 0.25, "black");
@@ -138,7 +162,7 @@
         fillBar(introGraph, Docs, 0.66, "black");
         fillBar(introGraph, Infra, 0.10, "black");
 
-        var featureComparison = drawGraph("feature-comparison");
+        var featureComparison = drawGraph("feature-comparison", labels);
 
         // Feature Black
         fillSection(featureComparison, Sales, 0.20, 10, "black");
