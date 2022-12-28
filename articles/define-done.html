@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Define Done - Articles | Adam Shannon</title>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <meta charset="utf-8" />
+    <style>
+      canvas {
+          border: 1px solid black;
+      }
+      div.graph {
+          text-align: center;
+      }
+    </style>
+  </head>
+  <body onload="draw();">
+
+    <nav>
+      <div class="right bold black">
+        <a href="https://github.com/adamdecaf">Github</a> |
+        <a href="https://twitter.com/adamdecaf">Twitter</a> |
+        <a href="https://keybase.io/adamdecaf">Keybase</a>
+      </div>
+
+      <h1><a href="../">Adam Shannon</a> - <a href="/articles">/articles</a></h1>
+    </nav>
+
+    <section>
+      <article style="overflow:auto;">
+
+        <h2 style="text-align: center;">title</h2>
+
+        <p>
+          foo
+        </p>
+
+        <div class="graph">
+          <canvas id="intro-graph-1" height="225" width="600"></canvas>
+        </div>
+
+      </article>
+    </section>
+
+    <script>
+      const GRAPH_TOP = 25;
+      const GRAPH_BOTTOM = 175;
+      const GRAPH_LEFT = 50;
+      const GRAPH_RIGHT = 575;
+
+      const BAR_WIDTH = 50;
+      const BAR_PADDING = 30;
+
+      function drawBar(ctx, idx, label) {
+        ctx.strokeRect((GRAPH_LEFT+BAR_PADDING)*idx, GRAPH_TOP, BAR_WIDTH, GRAPH_BOTTOM-GRAPH_TOP);
+
+        // Draw Label
+        ctx.save();
+        ctx.translate((GRAPH_LEFT+BAR_PADDING)*idx, GRAPH_BOTTOM+20);
+        //ctx.rotate(Math.PI / 5);
+
+        ctx.font = "20px sans-serif";
+        ctx.fillStyle = "#000000"; // green
+        //ctx.textAlign = "center";
+        ctx.fillText(label, 0, 0, BAR_WIDTH);
+
+        ctx.restore();
+      }
+
+      function draw() {
+        const canvas = document.getElementById("intro-graph-1");
+        if (canvas.getContext) {
+          const ctx = canvas.getContext("2d");
+
+          // Draw Chart Axis
+          ctx.beginPath();
+          ctx.moveTo(GRAPH_LEFT, GRAPH_TOP);
+          ctx.lineTo(GRAPH_LEFT, GRAPH_BOTTOM);
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.moveTo(GRAPH_LEFT, GRAPH_BOTTOM);
+          ctx.lineTo(GRAPH_RIGHT, GRAPH_BOTTOM);
+          ctx.stroke();
+
+          // Draw Chart Labels
+          ctx.font = "14px sans-serif";
+          ctx.fillText("100%", 7, 10+GRAPH_TOP);
+          ctx.fillText("0%", 25, GRAPH_BOTTOM);
+
+          // Draw Each Bar
+          drawBar(ctx, 1, " Sales");
+          drawBar(ctx, 2, "  CS");
+          drawBar(ctx, 3, " Eng");
+          drawBar(ctx, 4, "Product");
+          drawBar(ctx, 5, "  Docs");
+          drawBar(ctx, 6, " Infra");
+        }
+      }
+    </script>
+  </body>
+</html>
