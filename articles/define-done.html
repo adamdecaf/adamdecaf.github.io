@@ -122,22 +122,87 @@
         ctx.restore();
       }
 
+      const Sales = 1;
+      const CS = 2;
+      const Eng = 3;
+      const Prod = 4;
+      const Docs = 5;
+      const Infra = 6;
+
       function draw() {
         var introGraph = drawGraph("intro-graph-1");
-        fillBar(introGraph, 1, 0.65, "green");
-        fillBar(introGraph, 2, 0.40, "yellow");
-        fillBar(introGraph, 3, 0.25, "red");
-        fillBar(introGraph, 4, 1, "blue");
-        fillBar(introGraph, 5, 0.66, "black");
-        fillBar(introGraph, 6, 0.99, "gray");
+        fillBar(introGraph, Sales, 0.65, "black");
+        fillBar(introGraph, CS, 0.40, "black");
+        fillBar(introGraph, Eng, 0.25, "black");
+        fillBar(introGraph, Prod, 1.00, "black");
+        fillBar(introGraph, Docs, 0.66, "black");
+        fillBar(introGraph, Infra, 0.10, "black");
 
         var featureComparison = drawGraph("feature-comparison");
-        fillSection(featureComparison, 1, 0.65, 7, "green");
-        fillSection(featureComparison, 2, 0.40, 10, "yellow");
-        fillSection(featureComparison, 3, 0.25, 12, "red");
-        fillSection(featureComparison, 4, 0.90, 14, "blue");
-        fillSection(featureComparison, 5, 0.66, 15, "black");
-        fillSection(featureComparison, 6, 0.33, 20, "gray");
+
+        // Feature Black
+        fillSection(featureComparison, Sales, 0.20, 10, "black");
+        fillSection(featureComparison, CS, 0.25, 9, "black");
+        fillSection(featureComparison, Eng, 0.50, 8, "black");
+        fillSection(featureComparison, Prod, 0.70, 10, "black");
+        fillSection(featureComparison, Docs, 0.20, 7, "black");
+        fillSection(featureComparison, Infra, 0.15, 22, "black");
+
+        // Feature Green
+        fillSection(featureComparison, Sales, 0.70, 10, "green");
+        fillSection(featureComparison, CS, 0.15, 9, "green");
+        fillSection(featureComparison, Eng, 0.42, 7, "green");
+        fillSection(featureComparison, Prod, 0.50, 10, "green");
+        fillSection(featureComparison, Docs, 0.33, 15, "green");
+        fillSection(featureComparison, Infra, 0.40, 15, "green");
+
+        // Feature Blue
+        fillSection(featureComparison, Sales, 0.10, 3, "blue");
+        fillSection(featureComparison, CS, 0.40,  9, "blue");
+        fillSection(featureComparison, Eng, 0.81, 15, "blue");
+        fillSection(featureComparison, Prod, 0.60, 10, "blue");
+        fillSection(featureComparison, Docs, 0.65, 15, "blue");
+        fillSection(featureComparison, Infra, 0.25, 8, "blue");
+
+        // Feature Red
+        fillSection(featureComparison, Sales, 0.50, 10, "red");
+        fillSection(featureComparison, CS, 0.60, 9, "red");
+        fillSection(featureComparison, Eng, 0.22, 9, "red");
+        fillSection(featureComparison, Prod, 0.80, 10, "red");
+        fillSection(featureComparison, Docs, 0.10, 7, "red");
+        fillSection(featureComparison, Infra, 0.80, 13, "red");
+
+        // Feature Orange
+        fillSection(featureComparison, Sales, 0.40, 10, "orange");
+        fillSection(featureComparison, CS, 0.70, 9, "orange");
+        fillSection(featureComparison, Eng, 0.09, 8, "orange");
+        fillSection(featureComparison, Prod, 0.25, 10, "orange");
+        fillSection(featureComparison, Docs, 0.40, 7, "orange");
+        fillSection(featureComparison, Infra, 0.65, 15, "orange");
+
+        // Feature Purple
+        fillSection(featureComparison, Sales, 0.30, 10, "purple");
+        fillSection(featureComparison, CS, 0.30, 9, "purple");
+        fillSection(featureComparison, Eng, 0.65, 12, "purple");
+        fillSection(featureComparison, Prod, 0.10, 10, "purple");
+        fillSection(featureComparison, Docs, 0.50, 7, "purple");
+        fillSection(featureComparison, Infra, 0.50, 10, "purple");
+
+        // Feature Gray
+        fillSection(featureComparison, Sales, 0.60, 10, "gray");
+        fillSection(featureComparison, CS, 0.50, 9, "gray");
+        fillSection(featureComparison, Eng, 0.31, 8, "gray");
+        fillSection(featureComparison, Prod, 0.50, 20, "gray");
+        fillSection(featureComparison, Docs, 0.75, 7, "gray");
+        fillSection(featureComparison, Infra, 0.70, 10, "gray");
+
+        // Feature Yellow
+        fillSection(featureComparison, Sales, 0.80, 10, "yellow");
+        fillSection(featureComparison, CS, 0.80, 9, "yellow");
+        fillSection(featureComparison, Eng, 0.91, 7, "yellow");
+        fillSection(featureComparison, Prod, 0.35, 10, "yellow");
+        fillSection(featureComparison, Docs, 0.90, 7, "yellow");
+        fillSection(featureComparison, Infra, 0.90, 10, "yellow");
       }
     </script>
   </body>
