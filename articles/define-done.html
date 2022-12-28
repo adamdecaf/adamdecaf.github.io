@@ -26,27 +26,69 @@
     </nav>
 
     <section>
-      <article style="overflow:auto;">
-        <h2 style="text-align: center;">title</h2>
+      <h2 style="text-align: center;">How do you define "Done"?</h2>
 
-        <p>foo</p>
+      <article style="border-bottom: none; overflow:auto;">
+        <p>
+          Often teams that are creating software have a hard time knowing when features are "done" or what a features progress is.
+          This can be hard to track the more async planning teams have. Each team also has their own priorities, capabilities and blockers.
+        </p>
+        <ul>
+          <li>priorities - What a certain team values as important or their assigned tasks/goals.</li>
+          <li>capabilities - Can a team accomplish a feature? Does the language/framework/business unit/etc support what's needed?</li>
+          <li>blockers - Do teams understand what is requested? Are the requirements well understood and complete?</li>
+        </ul>
+        <span>
+          <div class="graph" style="float:right;">
+            <canvas id="team-graph" height="225" width="250"></canvas>
+          </div>
+          <div style="width: 70%;">
+            An engineering team might have priorities organized like the graph on the right for each feature / project. This graph shows how "complete"
+            a feature/project can be. The essential parts (database, api endpoints, etc) are listed lower since without them nothing above could be completed.
+            <br /><br />
+            This graph can be easy to understand for a single feature, but becomes more complex when teams have multiple concurrent features in progress.
+            Also, the "percent" complete may be misleading, but could represent <span class="code">time + effort</span> while showing dependencies.
+            <br /><br />
+            Unit tests require API endpoints (or event messaging, filesystem ops, etc) and fixing bugs typically requires deploying the software.
+          </div>
+        </span>
+      </article>
 
-        <div class="graph">
-          <canvas id="team-graph" height="225" width="250"></canvas>
-        </div>
-
-        <p>foo2</p>
-
+      <article style="border-bottom: none; overflow:auto;">
+        <p>
+          We can track an individual team's progress and priorities, but how do we compare that across teams? Product teams feed Engineering with requirements, designs, user stories, etc.
+          This implies that teams work ahead of others and are dependent on each other. We could show an aggregate view of a team's progress by showing how far along they are in their individual graph.
+          Doing so would assume they've completed all items in each step, but it's an approximation.
+        </p>
         <div class="graph">
           <canvas id="intro-graph-1" height="225" width="600"></canvas>
         </div>
+        <p>
+          Looking at this graph over time we can understand that Sales/Product would complete their work first. Sales gathers requirements from customers and Product folks turn them into requirements for Design/Engineering.
+          Docs teams are dependent on Design/Engineering for screenshots and API examples. Thinking about this flow makes sense, if we can measure the work.
+        </p>
+      </article>
 
-        <p>bar</p>
-
+      <article style="overflow:auto;">
+        <p>
+          In my experience I've seen teams scatter these priorities differently than other teams. Everyone has assumptions about what can get completed faster or what is more important. This results in a graph like the one below
+          where each filled section represents the <span class="code">time + effort</span> of one feature within a product. The colors show priority of a feature/request.
+          <br />
+          The lower a section is the more essential it is. When a item is understood to be essential it's either a building block for other features or a core component of the product.
+        </p>
         <div class="graph">
-          <canvas id="feature-comparison" height="225" width="600"></canvas>
+          <canvas id="unsorted-priorities" height="225" width="600"></canvas>
         </div>
-
+        <p>
+          This scattering of priorities and effort should be organized. When it's organized then teams should have better handoffs and leadership has more accurate estimates. An organized graph would show roughly idential color ordering,
+          which implies work is streamlined for dependencies. The real world may not have such alignment, but it's a goal.
+        </p>
+        <div class="graph">
+          <canvas id="sorted-priorities" height="225" width="600"></canvas>
+        </div>
+      </article>
+      <article style="border-bottom: none; overflow:auto;">
+        <span style="float:right;">Adam Shannon - 2022</span>
       </article>
     </section>
 
@@ -56,7 +98,7 @@
       const GRAPH_LEFT = 50;
       const GRAPH_RIGHT = 575;
 
-      const BAR_WIDTH = 50;
+      const BAR_WIDTH = 60;
       const BAR_PADDING = 30;
 
       function drawBar(ctx, idx, label) {
@@ -135,13 +177,13 @@
       }
 
       const Sales = 1;
-      const CS = 2;
+      const Prod = 2;
       const Eng = 3;
-      const Prod = 4;
+      const Infra = 4;
       const Docs = 5;
-      const Infra = 6;
+      const Support = 6;
 
-      const labels = [" Sales", "  CS", " Eng", "Product", "  Docs", " Infra"];
+      const labels = [" Sales", "Product", " Eng", " Infra", "  Docs", "Support"];
 
       function draw() {
         var teamGraph = drawGraph("team-graph", [" Eng"]);
@@ -156,77 +198,87 @@
 
         var introGraph = drawGraph("intro-graph-1", labels);
         fillBar(introGraph, Sales, 0.65, "black");
-        fillBar(introGraph, CS, 0.40, "black");
-        fillBar(introGraph, Eng, 0.25, "black");
         fillBar(introGraph, Prod, 1.00, "black");
-        fillBar(introGraph, Docs, 0.66, "black");
+        fillBar(introGraph, Eng, 0.25, "black");
         fillBar(introGraph, Infra, 0.10, "black");
+        fillBar(introGraph, Docs, 0.66, "black");
+        fillBar(introGraph, Support, 0.40, "black");
 
-        var featureComparison = drawGraph("feature-comparison", labels);
-
+        var unsortedPriorities = drawGraph("unsorted-priorities", labels);
         // Feature Black
-        fillSection(featureComparison, Sales, 0.20, 10, "black");
-        fillSection(featureComparison, CS, 0.25, 9, "black");
-        fillSection(featureComparison, Eng, 0.50, 8, "black");
-        fillSection(featureComparison, Prod, 0.70, 10, "black");
-        fillSection(featureComparison, Docs, 0.20, 7, "black");
-        fillSection(featureComparison, Infra, 0.15, 22, "black");
+        fillSection(unsortedPriorities, Sales, 0.20, 10, "black");
+        fillSection(unsortedPriorities, Prod, 0.70, 10, "black");
+        fillSection(unsortedPriorities, Eng, 0.50, 8, "black");
+        fillSection(unsortedPriorities, Infra, 0.15, 22, "black");
+        fillSection(unsortedPriorities, Docs, 0.20, 7, "black");
+        fillSection(unsortedPriorities, Support, 0.25, 9, "black");
 
         // Feature Green
-        fillSection(featureComparison, Sales, 0.70, 10, "green");
-        fillSection(featureComparison, CS, 0.15, 9, "green");
-        fillSection(featureComparison, Eng, 0.42, 7, "green");
-        fillSection(featureComparison, Prod, 0.50, 10, "green");
-        fillSection(featureComparison, Docs, 0.33, 15, "green");
-        fillSection(featureComparison, Infra, 0.40, 15, "green");
+        fillSection(unsortedPriorities, Sales, 0.70, 10, "green");
+        fillSection(unsortedPriorities, Prod, 0.50, 10, "green");
+        fillSection(unsortedPriorities, Eng, 0.42, 7, "green");
+        fillSection(unsortedPriorities, Infra, 0.40, 15, "green");
+        fillSection(unsortedPriorities, Docs, 0.33, 15, "green");
+        fillSection(unsortedPriorities, Support, 0.15, 9, "green");
 
         // Feature Blue
-        fillSection(featureComparison, Sales, 0.10, 3, "blue");
-        fillSection(featureComparison, CS, 0.40,  9, "blue");
-        fillSection(featureComparison, Eng, 0.81, 15, "blue");
-        fillSection(featureComparison, Prod, 0.60, 10, "blue");
-        fillSection(featureComparison, Docs, 0.65, 15, "blue");
-        fillSection(featureComparison, Infra, 0.25, 8, "blue");
+        fillSection(unsortedPriorities, Sales, 0.10, 3, "blue");
+        fillSection(unsortedPriorities, Prod, 0.60, 10, "blue");
+        fillSection(unsortedPriorities, Eng, 0.81, 15, "blue");
+        fillSection(unsortedPriorities, Infra, 0.25, 8, "blue");
+        fillSection(unsortedPriorities, Docs, 0.65, 15, "blue");
+        fillSection(unsortedPriorities, Support, 0.40,  9, "blue");
 
         // Feature Red
-        fillSection(featureComparison, Sales, 0.50, 10, "red");
-        fillSection(featureComparison, CS, 0.60, 9, "red");
-        fillSection(featureComparison, Eng, 0.22, 9, "red");
-        fillSection(featureComparison, Prod, 0.80, 10, "red");
-        fillSection(featureComparison, Docs, 0.10, 7, "red");
-        fillSection(featureComparison, Infra, 0.80, 13, "red");
+        fillSection(unsortedPriorities, Sales, 0.50, 10, "red");
+        fillSection(unsortedPriorities, Prod, 0.80, 10, "red");
+        fillSection(unsortedPriorities, Eng, 0.22, 9, "red");
+        fillSection(unsortedPriorities, Infra, 0.80, 13, "red");
+        fillSection(unsortedPriorities, Docs, 0.10, 7, "red");
+        fillSection(unsortedPriorities, Support, 0.60, 9, "red");
 
         // Feature Orange
-        fillSection(featureComparison, Sales, 0.40, 10, "orange");
-        fillSection(featureComparison, CS, 0.70, 9, "orange");
-        fillSection(featureComparison, Eng, 0.09, 8, "orange");
-        fillSection(featureComparison, Prod, 0.25, 10, "orange");
-        fillSection(featureComparison, Docs, 0.40, 7, "orange");
-        fillSection(featureComparison, Infra, 0.65, 15, "orange");
+        fillSection(unsortedPriorities, Sales, 0.40, 10, "orange");
+        fillSection(unsortedPriorities, Prod, 0.25, 10, "orange");
+        fillSection(unsortedPriorities, Eng, 0.09, 8, "orange");
+        fillSection(unsortedPriorities, Infra, 0.65, 15, "orange");
+        fillSection(unsortedPriorities, Docs, 0.40, 7, "orange");
+        fillSection(unsortedPriorities, Support, 0.70, 9, "orange");
 
         // Feature Purple
-        fillSection(featureComparison, Sales, 0.30, 10, "purple");
-        fillSection(featureComparison, CS, 0.30, 9, "purple");
-        fillSection(featureComparison, Eng, 0.65, 12, "purple");
-        fillSection(featureComparison, Prod, 0.10, 10, "purple");
-        fillSection(featureComparison, Docs, 0.50, 7, "purple");
-        fillSection(featureComparison, Infra, 0.50, 10, "purple");
+        fillSection(unsortedPriorities, Sales, 0.30, 10, "purple");
+        fillSection(unsortedPriorities, Prod, 0.10, 10, "purple");
+        fillSection(unsortedPriorities, Eng, 0.65, 12, "purple");
+        fillSection(unsortedPriorities, Infra, 0.50, 10, "purple");
+        fillSection(unsortedPriorities, Docs, 0.50, 7, "purple");
+        fillSection(unsortedPriorities, Support, 0.30, 9, "purple");
 
         // Feature Gray
-        fillSection(featureComparison, Sales, 0.60, 10, "gray");
-        fillSection(featureComparison, CS, 0.50, 9, "gray");
-        fillSection(featureComparison, Eng, 0.31, 8, "gray");
-        fillSection(featureComparison, Prod, 0.50, 20, "gray");
-        fillSection(featureComparison, Docs, 0.75, 7, "gray");
-        fillSection(featureComparison, Infra, 0.70, 10, "gray");
+        fillSection(unsortedPriorities, Sales, 0.60, 10, "gray");
+        fillSection(unsortedPriorities, Prod, 0.50, 20, "gray");
+        fillSection(unsortedPriorities, Eng, 0.31, 8, "gray");
+        fillSection(unsortedPriorities, Infra, 0.70, 10, "gray");
+        fillSection(unsortedPriorities, Docs, 0.75, 7, "gray");
+        fillSection(unsortedPriorities, Support, 0.50, 9, "gray");
 
         // Feature Yellow
-        fillSection(featureComparison, Sales, 0.80, 10, "yellow");
-        fillSection(featureComparison, CS, 0.80, 9, "yellow");
-        fillSection(featureComparison, Eng, 0.91, 7, "yellow");
-        fillSection(featureComparison, Prod, 0.35, 10, "yellow");
-        fillSection(featureComparison, Docs, 0.90, 7, "yellow");
-        fillSection(featureComparison, Infra, 0.90, 10, "yellow");
+        fillSection(unsortedPriorities, Sales, 0.80, 10, "yellow");
+        fillSection(unsortedPriorities, Prod, 0.35, 10, "yellow");
+        fillSection(unsortedPriorities, Eng, 0.91, 7, "yellow");
+        fillSection(unsortedPriorities, Infra, 0.90, 10, "yellow");
+        fillSection(unsortedPriorities, Docs, 0.90, 7, "yellow");
+        fillSection(unsortedPriorities, Support, 0.80, 9, "yellow");
+
+        // Sorted Priority Graph
+        var sortedPriorities = drawGraph("sorted-priorities", labels);
+        var colors = ["black", "green", "blue", "red", "orange", "purple", "gray", "yellow"];
+
+        // Show a growing graph that's sorted by color.
+        for (var c = 0; c < colors.length; c++) {
+          for (var team = Sales; team <= Support; team++) {
+            fillSection(sortedPriorities, team, (team*0.03)+(0.10*(c+1))-0.06, 10, colors[c]);
+          }
+        }
       }
     </script>
   </body>
