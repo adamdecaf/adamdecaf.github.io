@@ -29,6 +29,10 @@ ul {
     font-weight: bold;
 }
 
+.code {
+    font-family: monospace;
+}
+
 .right {
     float: right;
 }

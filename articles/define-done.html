@@ -40,7 +40,8 @@
         </ul>
         <span>
           <div class="graph" style="float:right;">
-            <canvas id="team-graph" height="225" width="250"></canvas>
+            <canvas id="eng-graph" height="225" width="260"></canvas>
+            <canvas id="prod-graph" height="225" width="260"></canvas>
           </div>
           <div style="width: 70%;">
             An engineering team might have priorities organized like the graph on the right for each feature / project. This graph shows how "complete"
@@ -186,15 +187,25 @@
       const labels = [" Sales", "Product", " Eng", " Infra", "  Docs", "Support"];
 
       function draw() {
-        var teamGraph = drawGraph("team-graph", [" Eng"]);
-        fillSection(teamGraph, Sales, 0.15, 22, "black", "DB Layer");
-        fillSection(teamGraph, Sales, 0.30, 15, "black", "API Endpoints");
-        fillSection(teamGraph, Sales, 0.40, 10, "black", "Unit Tests");
-        fillSection(teamGraph, Sales, 0.50, 10, "black", "Local Testing");
-        fillSection(teamGraph, Sales, 0.61, 11, "black", "Initial Deploy");
-        fillSection(teamGraph, Sales, 0.75, 15, "black", "Bugs");
-        fillSection(teamGraph, Sales, 0.89, 12, "black", "Improvements");
-        fillSection(teamGraph, Sales, 1.00, 5, "black", "Code Coverage");
+        var engGraph = drawGraph("eng-graph", [" Eng"]);
+        fillSection(engGraph, Sales, 0.15, 22, "black", "DB Layer");
+        fillSection(engGraph, Sales, 0.30, 15, "black", "API Endpoints");
+        fillSection(engGraph, Sales, 0.40, 10, "black", "Unit Tests");
+        fillSection(engGraph, Sales, 0.50, 10, "black", "Local Testing");
+        fillSection(engGraph, Sales, 0.61, 11, "black", "Initial Deploy");
+        fillSection(engGraph, Sales, 0.75, 15, "black", "Bugs");
+        fillSection(engGraph, Sales, 0.89, 12, "black", "Dashboards");
+        fillSection(engGraph, Sales, 1.00, 5, "black", "Code Coverage");
+
+        var prodGraph = drawGraph("prod-graph", ["Product"]);
+        fillSection(prodGraph, Sales, 0.15, 22, "black", "Early Customers");
+        fillSection(prodGraph, Sales, 0.30, 15, "black", "Basic Features");
+        fillSection(prodGraph, Sales, 0.40, 10, "black", "Design");
+        fillSection(prodGraph, Sales, 0.50, 10, "black", "QA/Testing");
+        fillSection(prodGraph, Sales, 0.61, 11, "black", "Enablement");
+        fillSection(prodGraph, Sales, 0.75, 15, "black", "Revenue");
+        fillSection(prodGraph, Sales, 0.89, 12, "black", "Retention");
+        fillSection(prodGraph, Sales, 1.00, 5, "black", "Extension");
 
         var introGraph = drawGraph("intro-graph-1", labels);
         fillBar(introGraph, Sales, 0.65, "black");
