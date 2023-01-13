@@ -47,7 +47,9 @@
             An engineering team might have priorities organized like the graph on the right for each feature / project. This graph shows how "complete"
             a feature/project can be. The essential parts (database, api endpoints, etc) are listed lower since without them nothing above could be completed.
             <br /><br />
-            This graph can be easy to understand for a single feature, but becomes more complex when teams have multiple concurrent features in progress.
+            A product team might have priorities that encompass a larger view than feature implementation.
+            <br /><br />
+            These graphs can be easy to understand for a single feature, but become more complex when teams have multiple concurrent features in progress.
             Also, the "percent" complete may be misleading, but could represent <span class="code">time + effort</span> while showing dependencies.
             <br /><br />
             Unit tests require API endpoints (or event messaging, filesystem ops, etc) and fixing bugs typically requires deploying the software.
@@ -58,6 +60,7 @@
       <article style="border-bottom: none; overflow:auto;">
         <p>
           We can track an individual team's progress and priorities, but how do we compare that across teams? Product teams feed Engineering with requirements, designs, user stories, etc.
+          Engineering teams feed Product with suggestions for improvement and known limitations. Support teams inform both Engineering and Product with common problems users encounter.
           This implies that teams work ahead of others and are dependent on each other. We could show an aggregate view of a team's progress by showing how far along they are in their individual graph.
           Doing so would assume they've completed all items in each step, but it's an approximation.
         </p>
@@ -66,7 +69,7 @@
         </div>
         <p>
           Looking at this graph over time we can understand that Sales/Product would complete their work first. Sales gathers requirements from customers and Product folks turn them into requirements for Design/Engineering.
-          Docs teams are dependent on Design/Engineering for screenshots and API examples. Thinking about this flow makes sense, if we can measure the work.
+          A documentation team is dependent on Design/Engineering for screenshots and API examples. Thinking about this flow makes sense, if we can measure the work.
         </p>
       </article>
 
@@ -74,19 +77,29 @@
         <p>
           In my experience I've seen teams scatter these priorities differently than other teams. Everyone has assumptions about what can get completed faster or what is more important. This results in a graph like the one below
           where each filled section represents the <span class="code">time + effort</span> of one feature within a product. The colors show priority of a feature/request.
-          <br />
+          <br /><br />
           The lower a section is the more essential it is. When a item is understood to be essential it's either a building block for other features or a core component of the product.
         </p>
         <div class="graph">
           <canvas id="unsorted-priorities" height="225" width="600"></canvas>
         </div>
         <p>
-          This scattering of priorities and effort should be organized. When it's organized then teams should have better handoffs and leadership has more accurate estimates. An organized graph would show roughly idential color ordering,
+          This scattering of priorities and effort should be organized. When teams are organized then there are better handoffs. Leadership has more accurate estimates as a result. An organized graph would show roughly idential color ordering,
           which implies work is streamlined for dependencies. The real world may not have such alignment, but it's a goal.
         </p>
         <div class="graph">
           <canvas id="sorted-priorities" height="225" width="600"></canvas>
         </div>
+        <p>
+          With all of these teams and priorities how do we determine what "Done" is? Everyone seems to ask about when work is "done" but answering that seems much harder.
+          It appears that teams have to internalize their notion of "done" (at a certain watermark on the graph) and communicate that.
+        </p>
+      </article>
+      <article>
+        <h4>Further Reading</h4>
+        <ul>
+          <li><a href="https://milwaukeemaven.blogspot.com/2022/08/write-admin-tools-from-day-one.html">Write Admin Tools from Day One</a></li>
+        </ul>
       </article>
       <article style="border-bottom: none; overflow:auto;">
         <span style="float:right;">Adam Shannon - 2022</span>
