@@ -11,7 +11,7 @@
     <nav>
       <div class="right bold black">
         <a href="https://github.com/adamdecaf">Github</a> |
-        <a href="https://twitter.com/adamdecaf">Twitter</a> |
+        <a href="https://x.com/adamdecaf">X</a> |
         <a href="https://keybase.io/adamdecaf">Keybase</a>
       </div>
 
@@ -33,7 +33,7 @@
         <table style="text-align: center; width: 100%;">
           <tr>
             <td style="width:25%;"><a href="https://github.com/adamdecaf">Github</a></td>
-            <td style="width:25%;"><a href="https://twitter.com/adamdecaf">Twitter</a></td>
+            <td style="width:25%;"><a href="https://x.com/adamdecaf">X</a></td>
             <td style="width:25%;"><a href="https://keybase.io/adamdecaf">Keybase</a></td>
             <td style="width:25%;"><a href="mailto:adamkshannon@gmail.com">Email</a></td>
           </tr>
@@ -65,74 +65,65 @@
         <a href="/adam-shannon-resume.pdf">Download</a> [PDF]<br /><br />
 
         <label for="experience">Experience</label>
-        <ul>
-          <li>(July 2022 - Present) Staff Software Engineer at <a href="https://moov.io">Moov Financial</a> and OSS <a href="https://github.com/moov-io">moov-io</a></li>
+        <p>
+          (Sept 2018 - Present) Founding Engineer at <a href="https://moov.io">Moov Financial</a> and OSS <a href="https://github.com/moov-io">moov-io</a>
+        </p>
+        <p>
+          Projects<br />
           <ul>
+            <li>Tech Lead on the payment rails (ACH, RTP) processing team with tens of billions of dollars in volume</li>
+            <li>Automated Clearing House (ACH) services using Go along with industry leading <a href="https://github.com/moov-io/ach">ach library</a> and <a href="https://github.com/moov-io/achgateway">achgateway</a>
+              along with <a href="https://github.com/moov-io/ach-test-harness">testing</a> and <a href="https://github.com/moov-io/ach-web-viewer">debugging</a> tools.</li>
+            <li>Real Time Payments (RTP) services using Go along with <a href="https://github.com/moov-io/rtp20022">creating</a> and <a href="https://github.com/moov-io/signedxml">patching</a> OSS libraries for ISO 20022 compliance</li>
+            <li>Senior developer on card acquiring and issuing teams building services to card brands directly from scratch. Using moov-io's <a href="https://github.com/moov-io/iso8583">iso8583</a>
+              and <a href="https://github.com/moov-io/iso8583-connection">iso8583-connection</a> libraries as the foundation.</li>
+            <li>Lead developer on card settlement services and sweeping capabilities in the Moov platform.</li>
+            <li>Initial developer of Infra components including CI/CD systems using Terraform, Github Actions, Docker, Kubernetes, Grafana/Loki, Prometheus</li>
+          </ul>
+        </p>
+        <p>
+          Roles and Challenges<br />
+          <ul>
+            <li>Maintaining and designing open-source tools and ecosystem for developers.</li>
+            <ul>
+              <li><a href="https://github.com/moov-io/bankcron">bankcron</a> - CLI wrapper to only run commands on banking days</li>
+              <li><a href="https://github.com/moov-io/cryptfs">cryptfs</a> - Go library for transparent cryptographic storage of files</li>
+              <li><a href="https://github.com/moov-io/watchman">Watchman</a> - AML/CTF/KYC/OFAC Search of global watchlist, sanctions, and politically exposed person (PEP)</li>
+            </ul>
+            <li>Leading development and operations of ACH services and day-to-day stability through numerous scale points.</li>
             <li>Building, deploying, and scaling backend services and infra components for inflight activity tracking and completion, diverse file retrieval, and payment processing rails.</li>
-            <li>Tech Lead on the payment rails processing team with billions of dollars of volume</li>
-            <li>Maintaining and designing open-source tools and ecosystem for developers</li>
-            <li>Technologies: Go, MySQL, Terraform, Kubernetes, Google Cloud</li>
-            <li>Projects:</li>
-            <ul>
-              <li>Leading development and operations of ACH services and day-to-day stability through numerous scale points</li>
-              <li>Real Time Payments (RTP) services using Go along with <a href="https://github.com/moov-io/rtp20022">creating</a> and <a href="https://github.com/moov-io/signedxml">patching</a> OSS libraries for ISO 20022 compliance</li>
-              <li>
-                Card acquiring/issuing teams and services built from scratch. Using moov-io's <a href="https://github.com/moov-io/iso8583">iso8583</a>
-                and <a href="https://github.com/moov-io/iso8583-connection">iso8583-connection</a> libraries as the foundation.
-                <ul>
-                  <li>Settlement services and fund sweeping capabilities</li>
-                </ul>
-              </li>
-            </ul>
+            <li>Fostering a culture of transparency, high trust, and autonomy at the start of Moov.</li>
           </ul>
-          </li>
-          <li>(Sept 2018 - June 2022) Senior Software Engineer at <a href="https://github.com/moov-io">Moov.io</a></li>
-          <ul>
-            <li>Build and deploy API and infrastructure services from the ground up</li>
-            <li>Oversaw and lead the building of Moov with hands-on development daily</li>
-            <li>Led and implemented numerous system designs across teams</li>
-            <li>Created engineering systems and processes for CI/CD to support hundreds of engineers</li>
-            <li>Led and implemented technical and personnel growth in all technical areas</li>
-            <li>Technologies: Go, MySQL/Postgres, Terraform, Kubernetes, Prometheus</li>
-            <li>Projects:</li>
-            <ul>
-              <li>
-                <a href="https://github.com/moov-io/ach">ACH</a>
-                 - Automated Clearing House HTTP server and library implementing NACHA file creation and validation
-              </li>
-              <li>
-                <a href="https://github.com/moov-io/achgateway">achgateway</a>
-                 - Highly available, distributed, event driven ACH engine powering real-world financial transactions
-              </li>
-              <li>
-                Multiple utilities for fintech operations and workflow enhancements
-                <ul>
-                  <li><a href="https://github.com/moov-io/ach-test-harness">ach-test-harness</a> - Configurable FTP server to simulate real world ACH originations, returns, and NOCs</li>
-                  <li><a href="https://github.com/moov-io/ach-web-viewer">ach-web-viewer</a> - Web based viewer of ACH files, audit trails, and other sources</li>
-                  <li><a href="https://github.com/moov-io/bankcron">bankcron</a> - CLI wrapper to only run commands on banking days</li>
-                  <li><a href="https://github.com/moov-io/cryptfs">cryptfs</a> - Go library for transparent cryptographic storage of files</li>
-                </ul>
-              </li>
-              <li>
-                <a href="https://github.com/moov-io/watchman">Watchman</a>
-                 - AML/CTF/KYC/OFAC Search of global watchlist, sanctions, and politically exposed person (PEP)
-              </li>
-            </ul>
-          </ul>
-          <li>(Jan 2014 - July 2018) Senior Software and Infrastructure Engineer at <a href="https://banno.com/">Banno</a></li>
+        </p>
+        <hr />
+
+        <p>
+          (Jan 2014 - July 2018) Senior Software and Infrastructure Engineer at <a href="https://banno.com/">Banno</a>
+        </p>
+        <p>
           <ul>
             <li>Writing and supporting a platform of applications for the banking needs of consumers and financial institutions</li>
             <li>Creating and operating the various deployment, monitoring and analysis platforms.</li>
             <li>Technologies: Scala/Java, Go, PostgreSQL, Redis, MongoDB, Terraform, Hashicorp Vault, Prometheus, HBase, Elasticsearch, Kafka</li>
           </ul>
-          <li>(Jan 2015 - May 2016) Co-Founder at Backline</li>
+        </p>
+        <hr />
+
+        <p>
+          (Jan 2015 - May 2016) Co-Founder at Backline
+        </p>
+        <p>
           <ul>
             <li>A platform for musical artists to discovery show and tour opportunities</li>
             <li>Market research and lead outreach for artists, music venues, studios and producers</li>
             <li>Technologies: AngularJS, AWS, Scala, Docker, PostgreSQL, Twilio</li>
           </ul>
-          <li>(Nov 2011 - Dec 2013) Intern at <a href="https://banno.com/">Banno</a></li>
-        </ul>
+        </p>
+        <p>
+          (Nov 2011 - Dec 2013) Intern at <a href="https://banno.com/">Banno</a>
+        </p>
+        <hr />
+
         <label for="education">Education</label>
         <ul>
           <li>(2010 - 2014) Bachelors of Science in Computer Science at the University of Northern Iowa</li>
