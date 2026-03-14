@@ -1,146 +1,149 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Adam Shannon (@adamdecaf)</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="flattr:id" content="qjxr6n">
   </head>
   <body>
+    <header>
+      <nav>
+        <div class="nav-container">
+          <h1 class="nav-title">Adam Shannon</h1>
+          <ul class="nav-links">
+            <li><a href="https://github.com/adamdecaf">GitHub</a></li>
+            <li><a href="https://x.com/adamdecaf">X</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
 
-    <nav>
-      <div class="right bold black">
-        <a href="https://github.com/adamdecaf">Github</a> |
-        <a href="https://x.com/adamdecaf">X</a> |
-        <a href="https://keybase.io/adamdecaf">Keybase</a>
+    <section class="hero">
+      <div class="hero-content">
+        <h2>Software and Infra Engineer</h2>
+        <p>Building scalable financial systems at <a href="http://github.com/moov-io" target="_blank">moov-io</a>, <a href="https://github.com/moovfinancial" target="_blank">Moov Financial</a> and many open-source tools.</p>
+        <p>A fan of <a href="https://bitaxe.org/" target="_blank">Bitcoin</a> and <a href="https://docs.learnbittensor.org/learn/introduction">Bittensor</a> where open source mining wins.</p>
+      </div>
+    </section>
+
+    <main>
+      <div class="cards">
+        <div class="card">
+          <h3>About</h3>
+          <p>Hey there! I read and write software to solve problems. Currently I'm working at <a href="https://github.com/moov-io">moov.io</a> and <a href="https://github.com/moovfinancial">Moov Financial</a> building services and a platform for credit unions, banks, and fintech companies.</p>
+          <p>I sometimes <a href="/articles">write my thoughts down</a> to share in either continuous form or static posts.</p>
+        </div>
+
+        <div class="card">
+          <h3>Contact</h3>
+          <p>Feel free to contact me via the following services. If you're looking for my help on a project it's probably best to email me.</p>
+          <ul class="contact-list">
+            <li><a href="https://github.com/adamdecaf">GitHub</a></li>
+            <li><a href="https://x.com/adamdecaf">X</a></li>
+            <li><a href="mailto:adamkshannon@gmail.com">Email</a></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Pages</h3>
+          <p>I've setup some pages that I update about my life.</p>
+          <ul class="pages-list">
+            <li><a href="/articles">Articles</a></li>
+            <li><a href="/camping">Camping</a></li>
+            <li><a href="/photos">Photos</a></li>
+            <li><a href="/van">Van</a></li>
+          </ul>
+        </div>
       </div>
 
-      <h1>Adam Shannon</h1>
-    </nav>
-
-    <section>
-      <article>
-        <h3>About</h3>
-        <p>Hey there! I read and write software to solve problems. Currently I'm working at <a href="https://github.com/moov-io">moov.io</a> and <a href="https://github.com/moovfinancial">Moov Financial</a> building services and a platform for credit unions, banks, and fintech companies.</p>
-        <p>I sometimes <a href="/articles">write my thoughts down</a> to share in either continuous form or static posts.</p>
-      </article>
-
-      <article>
-        <h3>Contact</h3>
-        <p>
-          Feel free to contact me via the following services. If you're looking for my help on a project it's probably best to email me.
-        </p>
-        <table style="text-align: center; width: 100%;">
-          <tr>
-            <td style="width:25%;"><a href="https://github.com/adamdecaf">Github</a></td>
-            <td style="width:25%;"><a href="https://x.com/adamdecaf">X</a></td>
-            <td style="width:25%;"><a href="https://keybase.io/adamdecaf">Keybase</a></td>
-            <td style="width:25%;"><a href="mailto:adamkshannon@gmail.com">Email</a></td>
-          </tr>
-        </table>
-        <br />
-      </article>
-
-      <article>
-        <h3>Pages</h3>
-        <p>
-          I've setup some pages that I update about my life.
-        </p>
-        <table style="text-align: center; width: 100%;">
-          <tr>
-            <td style="width:25%;"><a href="/articles">Articles</a></td>
-            <td style="width:25%;"><a href="/camping">Camping</a></td>
-            <td style="width:25%;"><a href="/photos">Photos</a></td>
-            <!-- <td><a href="/things">things</a></td> -->
-            <!-- <td><a href="/camping/trips">trips</a></td> -->
-            <td style="width:25%;"><a href="/van">Van</a></td>
-          </tr>
-        </table>
-        <br />
-      </article>
-
-      <article>
+      <div class="resume-card">
         <h3>Resume</h3>
+        <p><a href="/adam-shannon-resume.pdf" class="download-link">Download PDF</a></p>
 
-        <a href="/adam-shannon-resume.pdf">Download</a> [PDF]<br /><br />
-
-        <label for="experience">Experience</label>
-        <p>
-          (Sept 2018 - Present) Founding Engineer at <a href="https://moov.io">Moov Financial</a> and OSS <a href="https://github.com/moov-io">moov-io</a>
-        </p>
-        <p>
-          Projects<br />
+        <h4>Experience</h4>
+        <div class="experience-item">
+          <h5>Sept 2018 - Present: Founding Engineer at <a href="https://moov.io">Moov Financial</a> and OSS <a href="https://github.com/moov-io">moov-io</a></h5>
+          <p><strong>Projects</strong></p>
           <ul>
-            <li>Tech Lead on the payment rails (ACH, RTP) processing team with tens of billions of dollars in volume</li>
-            <li>Automated Clearing House (ACH) services using Go along with industry leading <a href="https://github.com/moov-io/ach">ach library</a> and <a href="https://github.com/moov-io/achgateway">achgateway</a>
-              along with <a href="https://github.com/moov-io/ach-test-harness">testing</a> and <a href="https://github.com/moov-io/ach-web-viewer">debugging</a> tools.</li>
-            <li>Real Time Payments (RTP) services using Go along with <a href="https://github.com/moov-io/rtp20022">creating</a> and <a href="https://github.com/moov-io/signedxml">patching</a> OSS libraries for ISO 20022 compliance</li>
-            <li>Senior developer on card acquiring and issuing teams building services to card brands directly from scratch. Using moov-io's <a href="https://github.com/moov-io/iso8583">iso8583</a>
-              and <a href="https://github.com/moov-io/iso8583-connection">iso8583-connection</a> libraries as the foundation.</li>
-            <li>Lead developer on card settlement services and sweeping capabilities in the Moov platform.</li>
-            <li>Initial developer of Infra components including CI/CD systems using Terraform, Github Actions, Docker, Kubernetes, Grafana/Loki, Prometheus</li>
+            <li>Tech Lead for the payment rails (ACH, RTP, FedNow, FedWire) processing team, handling tens of billions of dollars in volume.</li>
+            <li>Developed Automated Clearing House (ACH) services using Go, leveraging the industry-leading <a href="https://github.com/moov-io/ach">ACH library</a>, <a href="https://github.com/moov-io/achgateway">ACH Gateway</a>, <a href="https://github.com/moov-io/ach-test-harness">testing tools</a>, and <a href="https://github.com/moov-io/ach-web-viewer">debugging utilities</a>.</li>
+            <li>Built Real Time Payments (RTP) services in Go, including <a href="https://github.com/moov-io/rtp20022">creating</a> and <a href="https://github.com/moov-io/signedxml">patching</a> open-source libraries for ISO 20022 compliance.</li>
+            <li>Implemented FedNow Payments in Go with an <a href="https://github.com/moov-io/fednow20022">open-source library</a> compliant with ISO 20022 standards.</li>
+            <li>Developed FedWire Payments in Go using an <a href="https://github.com/moov-io/fedwire20022">open-source library</a> for ISO 20022 compliance.</li>
+            <li>Senior developer on card acquiring and issuing teams, building services for card brands from the ground up using Moov-io's <a href="https://github.com/moov-io/iso8583">ISO 8583</a> and <a href="https://github.com/moov-io/iso8583-connection">ISO 8583 Connection</a> libraries.</li>
+            <li>Lead developer for initial card settlement services and sweeping capabilities in the Moov platform.</li>
+            <li>Initial developer of infrastructure components, including CI/CD systems using Terraform, GitHub Actions, Docker, Kubernetes, Grafana/Loki, and Prometheus.</li>
           </ul>
-        </p>
-        <p>
-          Roles and Challenges<br />
+          <p><strong>Roles and Challenges</strong></p>
           <ul>
-            <li>Maintaining and designing open-source tools and ecosystem for developers.</li>
+            <li>Maintained and designed open-source tools and ecosystem for developers, including:</li>
             <ul>
-              <li><a href="https://github.com/moov-io/bankcron">bankcron</a> - CLI wrapper to only run commands on banking days</li>
-              <li><a href="https://github.com/moov-io/cryptfs">cryptfs</a> - Go library for transparent cryptographic storage of files</li>
-              <li><a href="https://github.com/moov-io/watchman">Watchman</a> - AML/CTF/KYC/OFAC Search of global watchlist, sanctions, and politically exposed person (PEP)</li>
+              <li><a href="https://github.com/moov-io/bankcron">Bankcron</a> - CLI wrapper for banking day operations</li>
+              <li><a href="https://github.com/moov-io/cryptfs">CryptFS</a> - Go library for transparent cryptographic file storage</li>
+              <li><a href="https://github.com/moov-io/watchman">Watchman</a> - AML/CTF/KYC/OFAC search engine for global watchlists, sanctions, and PEPs</li>
             </ul>
-            <li>Leading development and operations of ACH services and day-to-day stability through numerous scale points.</li>
-            <li>Building, deploying, and scaling backend services and infra components for inflight activity tracking and completion, diverse file retrieval, and payment processing rails.</li>
-            <li>Fostering a culture of transparency, high trust, and autonomy at the start of Moov.</li>
+            <li>Led development and operations with dozens of services, ensuring stability, availability, and consistency across multiple scale points.</li>
+            <li>Built, deployed, and scaled backend services and infrastructure for in-flight activity tracking, file retrieval, and payment processing.</li>
+            <li>Automated updates across multiple teams with templated services and communication patterns.</li>
+            <li>Consistent and high coverage of code scanning, vulnerability analysis, secure coding and design, high quality code.</li>
+            <li>Fostered a culture of transparency, high trust, and autonomy during Moov's early growth.</li>
           </ul>
-        </p>
-        <hr />
+        </div>
 
-        <p>
-          (Jan 2014 - July 2018) Senior Software and Infrastructure Engineer at <a href="https://banno.com/">Banno</a>
-        </p>
-        <p>
+        <div class="experience-item">
+          <h5>Feb 2023 - Present: Founder of <a href="https://recallkitchen.com/">Recall Kitchen</a></h5>
+          <ul>
+            <li>Built notification engine for product, vehicle, food, etc recalls.</li>
+            <li>AI usage to ingest, summarize, analyze, and enrich recall notification for smart user notifications.</li>
+            <li>MCP server for Agents to search recalls with x402 Payments for searches.</li>
+            <li>Bootstrapped funding with low burn rate during consistent growth.</li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <h5>Jan 2014 - July 2018: Senior Software and Infrastructure Engineer at <a href="https://banno.com/">Banno</a></h5>
           <ul>
             <li>Writing and supporting a platform of applications for the banking needs of consumers and financial institutions</li>
             <li>Creating and operating the various deployment, monitoring and analysis platforms.</li>
             <li>Technologies: Scala/Java, Go, PostgreSQL, Redis, MongoDB, Terraform, Hashicorp Vault, Prometheus, HBase, Elasticsearch, Kafka</li>
           </ul>
-        </p>
-        <hr />
+        </div>
 
-        <p>
-          (Jan 2015 - May 2016) Co-Founder at Backline
-        </p>
-        <p>
+        <div class="experience-item">
+          <h5>Jan 2015 - May 2016: Co-Founder at Backline</h5>
           <ul>
             <li>A platform for musical artists to discovery show and tour opportunities</li>
             <li>Market research and lead outreach for artists, music venues, studios and producers</li>
             <li>Technologies: AngularJS, AWS, Scala, Docker, PostgreSQL, Twilio</li>
           </ul>
-        </p>
-        <p>
-          (Nov 2011 - Dec 2013) Intern at <a href="https://banno.com/">Banno</a>
-        </p>
-        <hr />
+        </div>
 
-        <label for="education">Education</label>
+        <div class="experience-item">
+          <h5>Nov 2011 - Dec 2013: Intern at <a href="https://banno.com/">Banno</a></h5>
+          <ul>
+            <li>Support data aggregation and ingestion for online banking providers.</li>
+            <li>Expanded developer tooling to minimize time to resolve issues.</li>
+          </ul>
+        </div>
+
+        <h4>Education</h4>
         <ul>
           <li>(2010 - 2014) Bachelors of Science in Computer Science at the University of Northern Iowa</li>
         </ul>
 
-        <label for="awards">Awards</label>
+        <h4>Awards</h4>
         <ul>
-          <li>Business Professionals of America</li>
-          <li style="list-style-type:none;">
+          <li>Business Professionals of America
             <ul>
               <li>(2010) Third Place in National Level "Fundamentals of Web Design"</li>
-              <li>(2009 and 2010) State Champion in"Fundamentals of Web Design"</li>
+              <li>(2009 and 2010) State Champion in "Fundamentals of Web Design"</li>
               <li>(2010) First Place in State Level "Computer Security"</li>
             </ul>
           </li>
         </ul>
-      </article>
-    </section>
+      </div>
+    </main>
   </body>
 </html>
