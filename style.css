@@ -129,7 +129,7 @@ main {
   font-size: 1.5rem;
 }
 
-.card ul, .article-list {
+.article-list, div.camping > ul {
   padding-left: 2rem;
 }
 
