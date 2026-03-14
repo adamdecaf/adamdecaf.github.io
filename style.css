@@ -129,6 +129,10 @@ main {
   font-size: 1.5rem;
 }
 
+.card ul, .article-list {
+  padding-left: 2rem;
+}
+
 .resume-card h3 {
   color: #001f3f;
   margin-bottom: 1rem;
