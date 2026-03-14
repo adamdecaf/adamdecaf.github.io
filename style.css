@@ -205,7 +205,7 @@ main {
   }
 
   .nav-links {
-    gap: 1rem;
+    display: none;
   }
 
   .hero {
@@ -250,6 +250,10 @@ main {
   .nav-links {
     flex-direction: column;
     gap: 0.5rem;
+  }
+
+  main {
+    padding-top: 60px;
   }
 }
 
